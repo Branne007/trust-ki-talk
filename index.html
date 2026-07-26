@@ -299,9 +299,21 @@
             <input type="email" id="email" name="email" autocomplete="email" required>
           </div>
           <div class="form-field">
-            <label for="firma">Firma</label>
-            <input type="text" id="firma" name="firma" autocomplete="organization">
+            <label for="firma">Firma *</label>
+            <input type="text" id="firma" name="firma" autocomplete="organization" required>
           </div>
+        </div>
+
+        <div class="form-field">
+          <label for="rolle">Deine Rolle</label>
+          <select id="rolle" name="rolle">
+            <option value="">Bitte wählen</option>
+            <option>Inhaber</option>
+            <option>Geschäftsführer</option>
+            <option>Angestellte Geschäftsführung</option>
+            <option>Führungskraft</option>
+            <option>Sonstige</option>
+          </select>
         </div>
 
         <div class="form-field">
@@ -428,6 +440,12 @@
     form.querySelectorAll('input[name="termin"]')
   ).filter(function (b) { return b !== alleBox; });
 
+  function escapeHtml(t) {
+    return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
   function setStatus(state, text) {
     status.setAttribute('data-state', state);
     status.textContent = text;
@@ -448,7 +466,7 @@
 
   function pflichtfelderOk() {
     var ok = true;
-    ['vorname', 'nachname', 'email'].forEach(function (id) {
+    ['vorname', 'nachname', 'email', 'firma'].forEach(function (id) {
       var feld = document.getElementById(id);
       var leer = !feld.value.trim();
       var mail = id === 'email' && feld.value && feld.value.indexOf('@') === -1;
@@ -486,6 +504,7 @@
       nachname:   document.getElementById('nachname').value.trim(),
       email:      document.getElementById('email').value.trim(),
       firma:      document.getElementById('firma').value.trim(),
+      rolle:      document.getElementById('rolle').value,
       thema:      document.getElementById('thema').value.trim(),
       termine:    gewaehlt.join(', '),
       consentAt:  new Date().toISOString(),
@@ -503,9 +522,13 @@
     .then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
       form.style.display = 'none';
-      setStatus('ok',
-        'Danke, du bist angemeldet. Eine Bestätigung ist unterwegs, den Zugangslink bekommst du ' +
-        'ein paar Tage vor dem Termin.');
+      status.setAttribute('data-state', 'ok');
+      status.innerHTML =
+        '<strong class="formstatus-titel">Du bist angemeldet.</strong>' +
+        'Eine Bestätigung ist gerade unterwegs zu ' + escapeHtml(anmeldung.email) + '. ' +
+        'Den Zugangslink bekommst du ein paar Tage vor dem Termin, eine kurze Erinnerung ' +
+        'am Vortag. Bis dahin: schön, dass du dabei bist.';
+      status.scrollIntoView({ behavior: 'smooth', block: 'center' });
     })
     .catch(function () {
       submit.disabled = false;
