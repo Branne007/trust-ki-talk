@@ -10,9 +10,19 @@ ist live.** Am 23.09.2026 geprüft: Die Live-Seite trug exakt den Stand des
 letzten Commits (9ff182d, 07.09.). Ein `git push` veröffentlicht sofort,
 ohne weiteren Schritt.
 
-Welcher Dienst das ausliefert, ist hier nicht hinterlegt — es gibt keine
-`vercel.json` und kein `.vercel`. Vermutlich Vercel, verbunden mit
-`github.com/Branne007/trust-ki-talk`, aber das ist nicht belegt.
+**Ausgeliefert wird über Vercel**, Projekt `trust-ki-talk`, verbunden mit
+`github.com/Branne007/trust-ki-talk`, Production-Branch `main`. Am 23.09.2026
+belegt: Push um 21:16, Deployment „Ready" innerhalb von Sekunden, Seite live.
+Es gibt weder `vercel.json` noch `.vercel` im Repo — Vercel braucht beides
+nicht, die Verbindung liegt in der Vercel-Oberfläche.
+
+Die Subdomain `ki-talk` läuft laut `infrastruktur.md` **proxied über
+Cloudflare** (orange). Wenn eine Änderung live nicht ankommt, ist der
+Cloudflare-Zwischenspeicher der erste Verdächtige — nicht das Deployment.
+
+`.vercelignore` schließt `*.md` von der Auslieferung aus. Das wirkt auch bei
+GitHub-Deployments, am 23.09.2026 geprüft. Ohne diese Datei wäre jede
+Markdown-Datei im Repo unter der Domain abrufbar.
 
 **Folge: kein halbfertiger Stand in `main`.** Erst prüfen, dann committen,
 dann pushen. Ein Push ist hier kein Zwischenschritt, sondern der Deploy.
