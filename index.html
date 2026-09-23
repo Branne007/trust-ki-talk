@@ -377,6 +377,15 @@
           </label>
         </div>
 
+        <div class="consent">
+          <input type="checkbox" id="newsletter" name="newsletter">
+          <label for="newsletter">
+            Optional: Schick mir außerdem den TRUST-Newsletter — alle paar Wochen ein Impuls für
+            Unternehmer und neue Termine. Dafür kommt eine eigene Mail mit Bestätigungslink.
+            Abmeldung jederzeit mit einem Klick.
+          </label>
+        </div>
+
         <button type="submit" id="submit" class="btn btn-primary btn-large btn-block" disabled>
           Kostenlos anmelden
         </button>
@@ -384,9 +393,10 @@
         <p class="small-note" style="margin-top:0.75rem;text-align:center">
           Du kannst dich jederzeit wieder abmelden, ein Klick in jeder Mail genügt.
         </p>
-
-        <div class="formstatus" id="status" role="status" aria-live="polite"></div>
       </form>
+
+      <!-- Außerhalb des Formulars: es wird nach dem Absenden ausgeblendet -->
+      <div class="formstatus" id="status" role="status" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -500,6 +510,7 @@
 (function () {
   var form    = document.getElementById('talk-form');
   var consent = document.getElementById('consent');
+  var newsletter = document.getElementById('newsletter');
   var submit  = document.getElementById('submit');
   var status  = document.getElementById('status');
   var cfg     = window.TALK_CONFIG || {};
@@ -579,6 +590,8 @@
       consentAt:  new Date().toISOString(),
       quelle:     document.referrer || 'direkt'
     };
+    /* Der Worker zählt nur das boolesche true, nie "true" oder "on". */
+    if (newsletter.checked) anmeldung.newsletter = true;
 
     submit.disabled = true;
     setStatus('pending', 'Anmeldung wird gesendet …');
@@ -590,13 +603,45 @@
     })
     .then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (antwort) {
+      /* Erfolg nur bei einem lesbaren, bekannten status. Alles andere,
+         auch ein fehlender oder unbekannter Wert, landet im catch. */
+      var st = antwort && antwort.status;
+      if (st !== 'gesichert' && st !== 'gesichert-ohne-mail') {
+        throw new Error('status ' + st);
+      }
+
+      var text;
+      if (st === 'gesichert') {
+        text =
+          'Eine Bestätigung ist gerade unterwegs zu ' + escapeHtml(anmeldung.email) + '. ';
+      } else {
+        text =
+          'Die Bestätigungsmail an ' + escapeHtml(anmeldung.email) + ' konnte ich gerade ' +
+          'nicht verschicken — deine Anmeldung ist trotzdem gesichert, ich melde mich bei dir. ';
+      }
+      text +=
+        'Den Zugangslink bekommst du ein paar Tage vor dem Termin, eine kurze Erinnerung ' +
+        'am Vortag. Bis dahin: schön, dass du dabei bist.';
+
+      if (anmeldung.newsletter) {
+        if (antwort.newsletter === 'versendet') {
+          text +=
+            '<br><br>Für den Newsletter kommt gleich noch eine eigene Mail mit einem ' +
+            'Bestätigungslink — erst der Klick darin trägt dich ein.';
+        } else {
+          text +=
+            '<br><br>Die Mail zur Newsletter-Bestätigung konnte ich gerade nicht ' +
+            'verschicken. Ich kümmere mich darum.';
+        }
+      }
+
       form.style.display = 'none';
       status.setAttribute('data-state', 'ok');
       status.innerHTML =
-        '<strong class="formstatus-titel">Du bist angemeldet.</strong>' +
-        'Eine Bestätigung ist gerade unterwegs zu ' + escapeHtml(anmeldung.email) + '. ' +
-        'Den Zugangslink bekommst du ein paar Tage vor dem Termin, eine kurze Erinnerung ' +
-        'am Vortag. Bis dahin: schön, dass du dabei bist.';
+        '<strong class="formstatus-titel">Du bist angemeldet.</strong>' + text;
       status.scrollIntoView({ behavior: 'smooth', block: 'center' });
     })
     .catch(function () {
