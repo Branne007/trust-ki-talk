@@ -75,7 +75,7 @@
         <li><strong>Investition</strong><br>Keine. Nur deine Zeit.</li>
       </ul>
       <div class="hero-card-meta">
-        Nächster Termin: <strong>Freitag, 9. Oktober 2026 – „Delegieren, ohne dass es wieder bei dir landet“.</strong><br>
+        Nächster Termin: <strong id="naechster-termin">Freitag, 9. Oktober 2026 – „Delegieren, ohne dass es wieder bei dir landet“.</strong><br>
         Anmeldung nötig, damit du den Zugangslink bekommst.
       </div>
     </aside>
@@ -115,8 +115,8 @@
 
     <h3 style="margin:2rem 0 0.75rem;font-size:1.4rem;color:var(--color-navy)">Wer den Talk macht</h3>
     <p>
-      Ich bin Diplom-Ingenieur und seit über 40 Jahren im Mittelstand, viele davon in
-      Führungsverantwortung. Als vom TÜV Rheinland geprüfter Manager für angewandte
+      Ich bin Thomas Brandenburger, Dipl.-Ing. Maschinenbau mit mehr als 40 Jahren
+      Mittelstandserfahrung und Führungsverantwortung. Als vom TÜV Rheinland geprüfter Manager für angewandte
       KI-Transformation und autorisierter INQA-Coach
       <a href="https://inqa.trust-unternehmer.de" style="text-decoration: underline;">begleite ich Betriebe</a>
       dabei, KI verbindlich in ihre Abläufe zu bringen. Ich arbeite jeden Tag mit KI, und ich
@@ -130,7 +130,7 @@
           <li>Eine Führungsaufgabe pro Monat, gezeigt an einem echten Beispiel</li>
           <li>Den Prompt des Monats zum direkten Ausprobieren</li>
           <li>Antworten auf deine konkreten Fragen</li>
-          <li>Nach jedem Termin ein Workbook mit den Inhalten, dem Prompt und Vorlagen</li>
+          <li>Nach jedem Termin ein Workbook mit den Inhalten, den Prompts und Vorlagen</li>
         </ul>
       </div>
       <div class="info-card">
@@ -146,7 +146,7 @@
         <h3>Was du mitbringst</h3>
         <ul>
           <li>Eine Stunde ungestört</li>
-          <li>Ein KI-Werkzeug im Browser (ChatGPT, Copilot o. ä.). Wer keins hat, schaut einfach zu</li>
+          <li>Ein KI-Werkzeug im Browser (Claude, ChatGPT, Copilot o. ä.). Wer keins hat, schaut einfach zu</li>
           <li>Eine Frage aus deinem Alltag</li>
         </ul>
       </div>
@@ -188,7 +188,7 @@
 
     <p class="small-note" style="margin-top:1rem">
       <strong>Nach dem Termin:</strong> Alle Angemeldeten bekommen das Workbook zum Thema, mit
-      Zusammenfassung, Prompt und Vorlagen. Auch wenn du an dem Tag nicht dabei sein konntest.
+      Zusammenfassung, Prompts und Vorlagen. Auch wenn du an dem Tag nicht dabei sein konntest.
     </p>
   </div>
 </section>
@@ -203,7 +203,7 @@
     </p>
 
     <div style="margin-top:2rem">
-      <div class="event">
+      <div class="event" data-datum="2026-10-09">
         <div class="event-main">
           <span class="event-date">Freitag, 9. Oktober 2026</span>
           <span class="event-meta"><strong>Delegieren, ohne dass es wieder bei dir landet</strong></span>
@@ -211,7 +211,7 @@
         </div>
         <a href="#anmeldung" class="btn btn-outline">Anmelden</a>
       </div>
-      <div class="event">
+      <div class="event" data-datum="2026-11-13">
         <div class="event-main">
           <span class="event-date">Freitag, 13. November 2026</span>
           <span class="event-meta"><strong>Meetings, die etwas ergeben</strong></span>
@@ -219,7 +219,7 @@
         </div>
         <a href="#anmeldung" class="btn btn-outline">Anmelden</a>
       </div>
-      <div class="event">
+      <div class="event" data-datum="2026-12-11">
         <div class="event-main">
           <span class="event-date">Freitag, 11. Dezember 2026</span>
           <span class="event-meta"><strong>Was du 2027 nicht mehr tun solltest</strong></span>
@@ -227,7 +227,7 @@
         </div>
         <a href="#anmeldung" class="btn btn-outline">Anmelden</a>
       </div>
-      <div class="event">
+      <div class="event" data-datum="2027-01-15">
         <div class="event-main">
           <span class="event-date">Freitag, 15. Januar 2027</span>
           <span class="event-meta">Thema folgt</span>
@@ -235,7 +235,7 @@
         </div>
         <a href="#anmeldung" class="btn btn-outline">Anmelden</a>
       </div>
-      <div class="event">
+      <div class="event" data-datum="2027-02-12">
         <div class="event-main">
           <span class="event-date">Freitag, 12. Februar 2027</span>
           <span class="event-meta">Thema folgt</span>
@@ -243,7 +243,7 @@
         </div>
         <a href="#anmeldung" class="btn btn-outline">Anmelden</a>
       </div>
-      <div class="event">
+      <div class="event" data-datum="2027-03-12">
         <div class="event-main">
           <span class="event-date">Freitag, 12. März 2027</span>
           <span class="event-meta">Thema folgt</span>
@@ -416,7 +416,7 @@
       <details>
         <summary>Welches KI-Werkzeug brauche ich?</summary>
         <p>
-          Eins, das du im Browser öffnen kannst: ChatGPT, Microsoft Copilot, Gemini, Claude oder das
+          Eins, das du im Browser öffnen kannst: Claude, ChatGPT, Microsoft Copilot, Gemini oder das
           Werkzeug, das dein Betrieb freigegeben hat. Die kostenlosen Versionen reichen. Wichtig: Gib
           keine vertraulichen Daten oder Namen von Mitarbeitern in öffentliche Werkzeuge ein. Wie das
           sauber geht, ist im Talk immer wieder Thema.
@@ -448,8 +448,8 @@
       <details>
         <summary>Bekomme ich Unterlagen?</summary>
         <p>
-          Ja. Nach jedem Termin bekommen alle Angemeldeten ein Workbook mit den Inhalten, dem Prompt
-          des Monats und Vorlagen.
+          Ja. Nach jedem Termin bekommen alle Angemeldeten ein Workbook mit den Inhalten, den Prompts
+          und Vorlagen.
         </p>
       </details>
       <details>
@@ -521,6 +521,51 @@
     </div>
   </div>
 </footer>
+
+<script>
+/* Vergangene Termine ausblenden, gerechnet mit dem lokalen Datum ohne Uhrzeit.
+   Am Termintag selbst bleibt der Eintrag sichtbar. Ohne JavaScript bleibt
+   alles so stehen, wie es im HTML steht. */
+(function () {
+  function zwei(n) { return (n < 10 ? '0' : '') + n; }
+
+  var jetzt = new Date();
+  var heute = jetzt.getFullYear() + '-' + zwei(jetzt.getMonth() + 1) + '-' + zwei(jetzt.getDate());
+
+  var ersterSichtbarer = null;
+  var events = document.querySelectorAll('.event[data-datum]');
+  for (var i = 0; i < events.length; i++) {
+    if (events[i].getAttribute('data-datum') < heute) {
+      events[i].style.display = 'none';
+    } else if (!ersterSichtbarer) {
+      ersterSichtbarer = events[i];
+    }
+  }
+
+  /* Checkbox-Werte stehen als TT.MM.JJJJ im Formular und bleiben so. */
+  var boxen = document.querySelectorAll('input[name="termin"]');
+  for (var j = 0; j < boxen.length; j++) {
+    var teile = boxen[j].value.split('.');
+    if (boxen[j].value === 'Alle Termine' || teile.length !== 3) continue;
+    if (teile[2] + '-' + teile[1] + '-' + teile[0] < heute) {
+      boxen[j].checked = false;
+      var label = boxen[j].closest ? boxen[j].closest('label') : boxen[j].parentNode;
+      if (label) label.style.display = 'none';
+    }
+  }
+
+  var naechster = document.getElementById('naechster-termin');
+  if (naechster && ersterSichtbarer) {
+    var datum = ersterSichtbarer.querySelector('.event-date');
+    var thema = ersterSichtbarer.querySelector('.event-meta strong');
+    if (datum) {
+      naechster.textContent = thema
+        ? datum.textContent + ' – „' + thema.textContent + '“.'
+        : datum.textContent + '.';
+    }
+  }
+})();
+</script>
 
 <script>
 (function () {
@@ -656,8 +701,71 @@
 
       form.style.display = 'none';
       status.setAttribute('data-state', 'ok');
+      /* Weiterempfehlung: nur über das Mailprogramm des Besuchers, kein Versand über den Worker. */
+      var seite = 'https://ki-talk.trust-unternehmer.de';
+      var terminZeile = 'Immer am zweiten Freitag im Monat, 8:30 bis 9:30 Uhr.';
+      var termine = document.querySelectorAll('.event');
+      for (var i = 0; i < termine.length; i++) {
+        var datumEl = termine[i].querySelector('.event-date');
+        if (termine[i].style.display !== 'none' && datumEl) {
+          terminZeile = 'Nächster Termin: ' +
+            datumEl.textContent.replace(/\s+\d{4}\s*$/, '') + ', 8:30 bis 9:30 Uhr.';
+          break;
+        }
+      }
+      var mailText = [
+        'Hallo,',
+        '',
+        'ich habe mich gerade für den TRUST KI-Talk angemeldet: eine Stunde im Monat, online und ' +
+        'kostenfrei, für Unternehmer und Führungskräfte. Jedes Mal geht es um eine Führungsaufgabe ' +
+        'und darum, wie KI dabei die Vorarbeit abnimmt, mit einem Prompt zum direkten Ausprobieren.',
+        '',
+        terminZeile,
+        'Infos und Anmeldung: ' + seite,
+        '',
+        'Viele Grüße'
+      ].join('\r\n');
+      var mailto = 'mailto:?subject=' +
+        encodeURIComponent('Tipp: KI-Talk für Unternehmer und Führungskräfte') +
+        '&body=' + encodeURIComponent(mailText);
+
+      text +=
+        '<div style="margin-top:1.5rem">' +
+        '<strong>Für wen im Betrieb oder in deinem Netzwerk wäre das auch etwas?</strong><br>' +
+        'Deine Führungskräfte, ein Kollege, ein Unternehmer, den du kennst: ' +
+        'Schick ihm den KI-Talk einfach weiter.' +
+        '<div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.75rem">' +
+        '<a class="btn btn-outline" href="' + escapeHtml(mailto) + '">Per E-Mail empfehlen</a>' +
+        '<button type="button" class="btn btn-outline">Link kopieren</button>' +
+        '</div></div>';
+
       status.innerHTML =
         '<strong class="formstatus-titel">Du bist angemeldet.</strong>' + text;
+
+      var kopieren = status.querySelector('button');
+      kopieren.addEventListener('click', function () {
+        function linkZeigen() {
+          if (status.querySelector('.small-note')) return;
+          var p = document.createElement('p');
+          p.className = 'small-note';
+          p.style.marginTop = '0.75rem';
+          p.style.userSelect = 'all';
+          p.textContent = seite;
+          kopieren.parentNode.parentNode.appendChild(p);
+          if (window.getSelection && document.createRange) {
+            var r = document.createRange();
+            r.selectNodeContents(p);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(r);
+          }
+        }
+        if (!navigator.clipboard || !navigator.clipboard.writeText) { linkZeigen(); return; }
+        navigator.clipboard.writeText(seite).then(function () {
+          kopieren.textContent = 'Link kopiert';
+          setTimeout(function () { kopieren.textContent = 'Link kopieren'; }, 3000);
+        }, linkZeigen);
+      });
+
       status.scrollIntoView({ behavior: 'smooth', block: 'center' });
     })
     .catch(function () {
