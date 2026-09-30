@@ -14,6 +14,16 @@
 
 <link rel="stylesheet" href="./css/style.css">
 <link rel="icon" href="./bilder/TRUST-Signet-512px.png">
+<style>
+  /* Kasten "Die nächsten Termine" im Hero */
+  .hero-card .naechste-termine { list-style: none; margin: 0 0 1.25rem; padding: 0; }
+  .naechste-termine li { padding: 0.8rem 0; border-top: 1px solid var(--color-border); }
+  .naechste-termine li:first-child { border-top: 0; padding-top: 0; }
+  .hero-card .naechste-termine li + li { margin-top: 0; }
+  .nt-datum { display: block; font-weight: 700; font-size: 1rem; color: var(--color-orange-dark); }
+  .nt-thema { display: block; font-weight: 700; font-size: 1.25rem; line-height: 1.25; color: var(--color-navy); }
+  .hero-card .btn { width: 100%; margin-top: 1rem; }
+</style>
 
 <script>
   /* ============================================================
@@ -54,6 +64,7 @@
         <li>60 Minuten, 8:30 bis 9:30 Uhr</li>
         <li>Online, ohne Anfahrt</li>
         <li>Kostenfrei</li>
+        <li>Für Betriebe mit Team</li>
       </ul>
       <div class="hero-actions">
         <a href="#anmeldung" class="btn btn-primary btn-large">Kostenlos anmelden</a>
@@ -67,17 +78,20 @@
     </div>
 
     <aside class="hero-card">
-      <h2>Auf einen Blick</h2>
-      <ul>
-        <li><strong>Wann</strong><br>Zweiter Freitag im Monat, 8:30 bis 9:30 Uhr</li>
-        <li><strong>Wo</strong><br>Online, Zugangslink kommt per Mail</li>
-        <li><strong>Für wen</strong><br>Unternehmer, Geschäftsführer und Führungskräfte in Betrieben mit Team, nicht für Solo-Selbstständige</li>
-        <li><strong>Investition</strong><br>Keine. Nur deine Zeit.</li>
+      <h2>Die nächsten Termine</h2>
+      <!-- Wird per Skript aus dem Abschnitt "Termine" befüllt (die ersten drei
+           nicht vergangenen Einträge). Ohne JavaScript bleibt dieser Stand stehen. -->
+      <ul class="naechste-termine" id="naechste-termine">
+        <li><span class="nt-datum">Freitag, 9. Oktober</span><span class="nt-thema">Delegieren, ohne dass es wieder bei dir landet</span></li>
+        <li><span class="nt-datum">Freitag, 13. November</span><span class="nt-thema">Meetings, die etwas ergeben</span></li>
+        <li><span class="nt-datum">Freitag, 11. Dezember</span><span class="nt-thema">Was du 2027 nicht mehr tun solltest</span></li>
       </ul>
       <div class="hero-card-meta">
-        Nächster Termin: <strong id="naechster-termin">Freitag, 9. Oktober 2026 – „Delegieren, ohne dass es wieder bei dir landet“.</strong><br>
-        Anmeldung nötig, damit du den Zugangslink bekommst.
+        Zweiter Freitag im Monat, 8:30 bis 9:30 Uhr, online.<br>
+        Unternehmer, Geschäftsführer und Führungskräfte in Betrieben mit Team, nicht für Solo-Selbstständige.
+        Den Zugangslink bekommst du nach der Anmeldung per Mail.
       </div>
+      <a href="#anmeldung" class="btn btn-primary">Kostenlos anmelden</a>
     </aside>
   </div>
 </section>
@@ -532,13 +546,10 @@
   var jetzt = new Date();
   var heute = jetzt.getFullYear() + '-' + zwei(jetzt.getMonth() + 1) + '-' + zwei(jetzt.getDate());
 
-  var ersterSichtbarer = null;
   var events = document.querySelectorAll('.event[data-datum]');
   for (var i = 0; i < events.length; i++) {
     if (events[i].getAttribute('data-datum') < heute) {
       events[i].style.display = 'none';
-    } else if (!ersterSichtbarer) {
-      ersterSichtbarer = events[i];
     }
   }
 
@@ -554,14 +565,29 @@
     }
   }
 
-  var naechster = document.getElementById('naechster-termin');
-  if (naechster && ersterSichtbarer) {
-    var datum = ersterSichtbarer.querySelector('.event-date');
-    var thema = ersterSichtbarer.querySelector('.event-meta strong');
-    if (datum) {
-      naechster.textContent = thema
-        ? datum.textContent + ' – „' + thema.textContent + '“.'
-        : datum.textContent + '.';
+  /* Kasten "Die nächsten Termine": die ersten drei sichtbaren Einträge */
+  var liste = document.getElementById('naechste-termine');
+  if (liste) {
+    var sichtbar = [];
+    for (var k = 0; k < events.length && sichtbar.length < 3; k++) {
+      if (events[k].style.display !== 'none') sichtbar.push(events[k]);
+    }
+    if (sichtbar.length) {
+      liste.innerHTML = '';
+      for (var m = 0; m < sichtbar.length; m++) {
+        var d = sichtbar[m].querySelector('.event-date');
+        var t = sichtbar[m].querySelector('.event-meta strong');
+        var li = document.createElement('li');
+        var sd = document.createElement('span');
+        sd.className = 'nt-datum';
+        sd.textContent = d ? d.textContent.replace(/\s\d{4}$/, '') : '';
+        var st = document.createElement('span');
+        st.className = 'nt-thema';
+        st.textContent = t ? t.textContent : 'Thema folgt';
+        li.appendChild(sd);
+        li.appendChild(st);
+        liste.appendChild(li);
+      }
     }
   }
 })();
