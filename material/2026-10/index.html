@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!--
+  ============================================================
+  TRUST KI-Talk · Materialseite · Vorlage für alle Monate
+  ------------------------------------------------------------
+  Neuer Monat: Ordner kopieren nach material/JJJJ-MM/ und austauschen:
+    - <title>, Kicker-Datum, H1, Datumszeile, Einleitung
+    - Inhaltsverzeichnis und Abschnitte (Nummern = Reihenfolge im Talk)
+    - Prompt-Texte (in <pre>, Platzhalter in <span class="ph">)
+    - Quellen und Abschnitt „Wie es weitergeht“
+  Gleich bleiben: Kopf, Hinweiskasten Datenschutz, Fußzeile, Skript,
+  material/material.css, robots noindex.
+  Keine externen Ressourcen einbinden (Schriften lokal, kein Tracking).
+  ============================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material · Delegieren, ohne dass es wieder bei dir landet · TRUST KI-Talk</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../material.css">
+<link rel="icon" href="../../bilder/TRUST-Signet-512px.png">
+</head>
+<body>
+
+<a class="skip-link" href="#inhalt">Direkt zum Inhalt</a>
+
+<header class="site-header mat-header">
+  <div class="container header-inner">
+    <a class="brand-logo" href="https://ki-talk.trust-unternehmer.de">
+      <img src="../../bilder/TRUST-Hauptlogo-horizontal.svg" alt="TRUST Unternehmer. Nicht allein.">
+    </a>
+  </div>
+</header>
+
+<section class="mat-hero">
+  <div class="container">
+    <span class="kicker">TRUST KI-Talk · Material</span>
+    <h1>Delegieren, ohne dass es wieder bei dir landet</h1>
+    <p class="mat-datum">Freitag, 9. Oktober 2026 · mit Thomas Brandenburger</p>
+    <p class="mat-intro">Alles aus dem Talk an einem Ort: die Prompts zum Kopieren, die Checklisten und die Quellen. Die Nummern entsprechen der Reihenfolge in der Stunde. Die Seite bleibt online, du kannst jederzeit wiederkommen.</p>
+  </div>
+</section>
+
+<div class="container mat-layout">
+
+  <nav class="mat-toc" aria-label="Inhalt dieser Seite">
+    <h2>Inhalt</h2>
+    <ol>
+      <li><a href="#affe"><span>1</span>Der Affe auf der Schulter</a></li>
+      <li><a href="#fehler"><span>2</span>Die fünf häufigsten Fehler</a></li>
+      <li><a href="#schritte"><span>3</span>Die 7 Schritte</a></li>
+      <li><a href="#wochenliste"><span>4</span>Prompt 1: Die Wochenliste</a></li>
+      <li><a href="#stufen"><span>5</span>Die fünf Delegationsstufen</a></li>
+      <li><a href="#auftrag"><span>6</span>Prompt 2: Der Delegationsauftrag</a></li>
+      <li><a href="#liste"><span>7</span>Die Delegationsliste</a></li>
+      <li><a href="#montags-check"><span>8</span>Prompt 3: Der Montags-Check</a></li>
+      <li><a href="#quellen"><span>9</span>Quellen</a></li>
+      <li><a href="#weiter"><span>10</span>Wie es weitergeht</a></li>
+    </ol>
+  </nav>
+
+  <main id="inhalt" class="mat-content">
+
+    <div class="mat-hinweis">
+      <p><strong>Bevor du etwas in ein KI-Werkzeug eingibst:</strong> Rollen statt Namen („meine Teamleiterin Vertrieb“, nicht „Frau Müller“). Keine vertraulichen Details, keine Kundendaten. Wenn dein Betrieb ein KI-Werkzeug freigegeben hat, nimm das.</p>
+    </div>
+
+    <!-- 1 -->
+    <section class="mat-section" id="affe">
+      <h2><span class="mat-nr">1</span>Der Affe auf der Schulter</h2>
+      <blockquote><p>Ein Mitarbeiter spricht dich auf dem Flur an: „Chef, wir haben da ein Problem.“ Du sagst: „Lass mich mal drüber nachdenken, ich melde mich.“ In diesem Moment ist der Affe auf deine Schulter gesprungen. Das Problem gehörte dem Mitarbeiter, jetzt gehört es dir. Und jetzt wartet er auf dich.</p></blockquote>
+      <p><strong>Die Gegenfrage, die den Affen beim Mitarbeiter lässt:</strong> „Was schlägst du vor?“ Oder: „Komm morgen mit zwei Lösungsvorschlägen, dann entscheiden wir.“</p>
+      <p class="mat-quelle">Nach dem Klassiker „Who’s Got the Monkey?“ von William Oncken und Donald Wass, Harvard Business Review.</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="mat-section" id="fehler">
+      <h2><span class="mat-nr">2</span>Die fünf häufigsten Fehler</h2>
+      <div class="mat-tabelle">
+        <table>
+          <thead>
+            <tr><th>Fehler</th><th>Was passiert</th><th>Was hilft</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Mangelnde Kommunikation</strong></td><td>Aufgabe nur zwischen Tür und Angel besprochen</td><td>Übergabegespräch, Nachfragen zulassen</td></tr>
+            <tr><td><strong>Unklare Erwartungen</strong></td><td>Der Mitarbeiter weiß nicht, was am Ende rauskommen soll</td><td>Ergebnis und Termin festlegen</td></tr>
+            <tr><td><strong>Rückdelegation</strong></td><td>Bei Überforderung oder durch „Dumm stellen“ kommt die Aufgabe unfertig zurück</td><td>Der Affe bleibt beim Mitarbeiter</td></tr>
+            <tr><td><strong>Zu wenig Kontrolle</strong></td><td>Die Aufgabe gerät in Vergessenheit, keiner meldet sich, keiner fragt nach</td><td>Kontrollpunkte vorher vereinbaren und nachhalten</td></tr>
+            <tr><td><strong>Fehlende Vertrauensbasis</strong></td><td>Kontrolle wird als Misstrauen erlebt, oder der Chef macht es lieber selbst</td><td>Das Ergebnis prüfen, nicht jeden Handgriff</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mat-tipp"><strong>Gut zu wissen:</strong> Führungskräfte bewerten dieselbe Arbeit besser, wenn sie selbst stärker daran beteiligt waren. Das Gefühl „bei mir wird’s besser“ ist also zum Teil eine Wahrnehmungstäuschung.</p>
+    </section>
+
+    <!-- 3 -->
+    <section class="mat-section" id="schritte">
+      <h2><span class="mat-nr">3</span>Die 7 Schritte guten Delegierens</h2>
+      <ol class="schritte">
+        <li><strong>Aufgaben identifizieren.</strong> Was kann ich abgeben? <a class="ki-hilft" href="#wochenliste">KI hilft · Punkt 4</a></li>
+        <li><strong>Den richtigen Mitarbeiter auswählen.</strong> Wer kann es, wer soll daran wachsen? <a class="ki-hilft" href="#auftrag">KI hilft · Punkt 6</a></li>
+        <li><strong>Ziele und Erwartungen definieren.</strong> Was soll rauskommen, bis wann? <a class="ki-hilft" href="#auftrag">KI hilft · Punkt 6</a></li>
+        <li><strong>Klare Anweisungen formulieren.</strong> Präzise statt vage, mit Befugnissen. <a class="ki-hilft" href="#auftrag">KI hilft · Punkt 6</a></li>
+        <li><strong>Unterstützung anbieten.</strong> Befähigen, nicht allein lassen.</li>
+        <li><strong>Regelmäßige Kontrolle einbauen.</strong> Kontrollpunkte vereinbaren und nachhalten. <a class="ki-hilft" href="#liste">KI hilft · Punkt 7 und 8</a></li>
+        <li><strong>Feedback nutzen.</strong> Anerkennen, Verbesserung benennen.</li>
+      </ol>
+      <p><em>Unterstützung und Anerkennung gibt ein Mensch. Bei den anderen fünf Schritten nimmt dir die KI die Vorarbeit ab.</em></p>
+    </section>
+
+    <!-- 4 -->
+    <section class="mat-section" id="wochenliste">
+      <h2><span class="mat-nr">4</span>Prompt 1: Die Wochenliste</h2>
+      <p>Was liegt auf deinem Tisch, das dort nicht hingehört? Füge deine Aufgaben der Woche ein, so wie sie dir einfallen. Die KI sortiert, du entscheidest.</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Prompt 1 · Die Wochenliste</strong><button type="button" class="kopieren" data-ziel="p-wochenliste">Kopieren</button></div>
+<pre id="p-wochenliste">Ich bin Geschäftsführer eines mittelständischen Betriebs mit rund <span class="ph">[Anzahl]</span> Mitarbeitern.
+Unten steht alles, was diese Woche auf meinem Tisch liegt.
+
+Sortiere die Aufgaben in vier Gruppen:
+1. Muss ich selbst machen – weil nur ich es entscheiden oder verantworten kann
+2. Kann ich delegieren – mit Vorschlag, an welche Rolle
+3. Kann ich weglassen oder deutlich reduzieren
+4. Kann die KI vorbereiten, ich entscheide dann
+
+Begründe jede Zuordnung in einem Satz. Sei kritisch: Wenn ich mir bei Gruppe 1
+etwas vormache, sag es mir.
+
+Meine Aufgaben:
+<span class="ph">[Liste einfügen]</span></pre>
+      </div>
+      <p class="mat-tipp"><strong>Tipp:</strong> Widersprich der KI, wo sie danebenliegt. Du kennst deinen Betrieb, sie nicht.</p>
+    </section>
+
+    <!-- 5 -->
+    <section class="mat-section" id="stufen">
+      <h2><span class="mat-nr">5</span>Die fünf Delegationsstufen</h2>
+      <p>Wie viel darf der andere selbst entscheiden? Wer die Stufe nicht nennt, bekommt entweder Rückfragen zu allem, oder es wird etwas entschieden, was du selbst entscheiden wolltest.</p>
+      <ol class="stufen">
+        <li><strong>1 · Setze um.</strong> Ich sage genau, was zu tun ist.</li>
+        <li><strong>2 · Arbeite dich ein.</strong> Mach dich schlau, dann sprechen wir.</li>
+        <li><strong>3 · Erarbeite einen Vorschlag.</strong> Ich entscheide.</li>
+        <li><strong>4 · Entscheide und gib mir Rückmeldung.</strong></li>
+        <li><strong>5 · Entscheide ohne Rückmeldung.</strong></li>
+      </ol>
+      <p>Welche Stufe passt, hängt davon ab, wie erfahren jemand mit genau dieser Art Aufgabe ist. <strong>Stufe 3 ist der Affen-Schutz:</strong> „Komm mit einem Vorschlag“ lässt die Aufgabe beim Mitarbeiter.</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="mat-section mat-highlight" id="auftrag">
+      <span class="mat-label">Prompt des Monats</span>
+      <h2><span class="mat-nr">6</span>Prompt 2: Der Delegationsauftrag</h2>
+      <p>Aus deinen Stichworten wird ein vollständiger Auftrag: Ziel, Termin, Befugnisse, Ressourcen, Kontrollpunkte. Danach stellt dir die KI die Rückfragen, die dein Mitarbeiter stellen würde. <strong>Die Rückfragen sind die eigentliche Erkenntnis.</strong></p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Prompt 2 · Der Delegationsauftrag</strong><button type="button" class="kopieren" data-ziel="p-auftrag">Kopieren</button></div>
+<pre id="p-auftrag">Ich möchte eine Aufgabe an <span class="ph">[Rolle, z. B. meine Teamleiterin Vertrieb]</span> übergeben.
+Erfahrung dieser Person mit so einer Aufgabe: <span class="ph">[neu / etwas Erfahrung / sehr erfahren]</span>
+Hier meine Stichworte:
+<span class="ph">[Stichworte – so, wie sie dir gerade einfallen]</span>
+
+Formuliere daraus einen Auftrag, den sie ohne Rückfrage bei mir umsetzen kann:
+1. Ziel: Was soll am Ende herauskommen? Woran erkennen wir, dass es gut erledigt ist?
+2. Termin: Endtermin und sinnvolle Zwischentermine
+3. Befugnisse: Schlage eine Delegationsstufe vor (Setze um · Arbeite dich ein ·
+   Erarbeite einen Vorschlag · Entscheide mit Rückmeldung · Entscheide ohne Rückmeldung)
+   und sag konkret, was sie selbst entscheidet und was sie mit mir abstimmt
+4. Ressourcen: Budget, Zeit, Ansprechpartner, Unterlagen
+5. Kontrollpunkte: Wann meldet sie sich unaufgefordert bei mir, und mit was?
+   Wann frage ich nach, falls nichts kommt?
+
+Stelle mir danach die fünf Rückfragen, die sie mir wahrscheinlich stellen würde.
+Zeig mir, an welcher Stelle die Aufgabe am ehesten wieder bei mir landen würde.
+Fasse zum Schluss alles in einer Zeile für meine Delegationsliste zusammen:
+Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt
+Schreib klar und knapp, ohne Floskeln.</pre>
+      </div>
+      <p class="mat-tipp"><strong>Tipp:</strong> Schick den fertigen Auftrag nicht einfach per Mail. Nimm ihn als Spickzettel für das Übergabegespräch, dann reichen fünf Minuten.</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="mat-section" id="liste">
+      <h2><span class="mat-nr">7</span>Die Delegationsliste</h2>
+      <p>Aus den Augen, aus dem Sinn: Genau so verlaufen delegierte Aufgaben im Sande. Die KI erinnert dich nicht von selbst. Das System dahinter ist eine schlichte Liste, egal ob in Excel, Word oder im Notizbuch.</p>
+      <div class="mat-tabelle">
+        <table id="t-liste">
+          <thead>
+            <tr><th>Aufgabe</th><th>Rolle</th><th>Stufe</th><th>Endtermin</th><th>Nächster Kontrollpunkt</th><th>Letzter Stand</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Kundenbefragung Top-30 aufsetzen</td><td>Teamleiterin Vertrieb</td><td>3</td><td>30.10.</td><td>12.10.</td><td>Fragebogen-Entwurf angekündigt</td></tr>
+            <tr><td>Angebote Messestand einholen</td><td>Assistenz Geschäftsführung</td><td>2</td><td>23.10.</td><td>02.10.</td><td>nichts gehört</td></tr>
+            <tr><td>Urlaubsplanung Weihnachten</td><td>Schichtleiter Produktion</td><td>4</td><td>15.10.</td><td>07.10.</td><td>Entwurf liegt vor</td></tr>
+            <tr><td>Einarbeitungsplan neuer Mitarbeiter</td><td>Teamleiter Lager</td><td>3</td><td>31.10.</td><td>19.10.</td><td>–</td></tr>
+            <tr><td>Lieferantenvergleich Verpackung</td><td>Einkauf</td><td>3</td><td>25.09.</td><td>18.09.</td><td>„ich kümmere mich“, seit drei Wochen nichts</td></tr>
+            <tr><td>Karriereseite überarbeiten</td><td>Marketing</td><td>4</td><td>06.11.</td><td>16.10.</td><td>erste Texte in Arbeit</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mat-tabelle-aktion"><button type="button" class="kopieren kopieren-hell" data-tabelle="t-liste">Als Tabelle für Excel kopieren</button></p>
+      <p><strong>Zwei Gewohnheiten:</strong></p>
+      <ol>
+        <li><strong>Kontrollpunkte sofort in den Kalender.</strong> Als Termin oder Outlook-Aufgabe mit Erinnerung, im Moment der Übergabe. Das ist dein eigentliches Erinnerungssystem.</li>
+        <li><strong>Montags-Check, fünf Minuten.</strong> Die Liste einmal pro Woche der KI geben, mit Prompt 3.</li>
+      </ol>
+    </section>
+
+    <!-- 8 -->
+    <section class="mat-section" id="montags-check">
+      <h2><span class="mat-nr">8</span>Prompt 3: Der Montags-Check</h2>
+      <p>Einmal pro Woche: Was ist überfällig, wo hast du nichts gehört, und wie fragst du nach, ohne dass es nach Misstrauen klingt?</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Prompt 3 · Der Montags-Check</strong><button type="button" class="kopieren" data-ziel="p-montag">Kopieren</button></div>
+<pre id="p-montag">Unten steht meine Liste delegierter Aufgaben. Heute ist <span class="ph">[Datum]</span>.
+1. Welche Aufgaben sind überfällig, und welche haben in den nächsten 7 Tagen
+   einen Kontrollpunkt?
+2. Bei welchen habe ich seit über zwei Wochen nichts gehört?
+3. Formuliere für jede dieser Aufgaben eine kurze, freundliche Nachfrage an die
+   Person: ergebnisorientiert, ohne Misstrauen, mit konkreter Frage
+   („Wo stehst du? Was brauchst du von mir? Was läuft anders als gedacht?“).
+4. Wo sieht es so aus, als käme die Aufgabe gerade zu mir zurück?
+
+Meine Liste:
+<span class="ph">[Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt | letzter Stand]</span></pre>
+      </div>
+      <p class="mat-tipp"><strong>Kontrolle ist kein Misstrauen, sondern Orientierung.</strong> Die KI ersetzt nicht dein Nachfragen. Sie sorgt dafür, dass du es nicht vergisst und dass es gut klingt.</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="mat-section" id="quellen">
+      <h2><span class="mat-nr">9</span>Quellen</h2>
+      <ul class="quellen">
+        <li><strong>Gallup:</strong> Gründer schnell wachsender Unternehmen, die gut delegieren, erzielen rund ein Drittel mehr Umsatz. Drei von vier Unternehmern tun sich mit dem Delegieren schwer.</li>
+        <li><strong>Julian Birkinshaw und Jordan Cohen, London Business School:</strong> „Make Time for the Work That Matters“, Harvard Business Review. Wissensarbeiter verbringen im Schnitt rund 41 % ihrer Zeit mit Tätigkeiten, die andere genauso gut erledigen könnten.</li>
+        <li><strong>Jeffrey Pfeffer, Robert Cialdini u. a., Stanford University:</strong> „Faith in Supervision and the Self-Enhancement Bias“. Führungskräfte bewerten Arbeit besser, an der sie selbst beteiligt waren.</li>
+        <li><strong>William Oncken und Donald Wass:</strong> „Management Time: Who’s Got the Monkey?“, Harvard Business Review.</li>
+        <li><strong>Allan Lee, Sara Willis, Amy Wei Tian:</strong> Metaanalyse zu Empowering Leadership. Wer Verantwortung überträgt, stärkt vor allem Eigeninitiative und Kreativität.</li>
+        <li><strong>Microsoft Work Trend Index:</strong> der „Agent Boss“. Aufgaben an KI zu vergeben, wird zur Führungsaufgabe für alle.</li>
+      </ul>
+    </section>
+
+    <!-- 10 -->
+    <section class="mat-section" id="weiter">
+      <h2><span class="mat-nr">10</span>Wie es weitergeht</h2>
+      <ul>
+        <li><strong>Workbook:</strong> Alle Angemeldeten bekommen in den nächsten Tagen das Workbook mit allen Inhalten dieser Seite und den Antworten auf die Fragen aus der Runde.</li>
+        <li><strong>Nächster KI-Talk:</strong> Freitag, 13. November 2026, 8:30 bis 9:30 Uhr · <strong>Meetings, die etwas ergeben.</strong> <a href="https://ki-talk.trust-unternehmer.de/#anmeldung">Anmelden</a></li>
+        <li><strong>Weitersagen:</strong> Wenn du jemanden kennst, dem das helfen würde, zum Beispiel deine eigenen Führungskräfte: Schick ihnen den Link zur <a href="https://ki-talk.trust-unternehmer.de">KI-Talk-Seite</a>.</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Thomas Brandenburger</strong> · TB UnternehmerImpulse eG<br>
+      Am Zwingel 2 · 35683 Dillenburg
+    </div>
+    <div>
+      <a href="https://trust-unternehmer.de">trust-unternehmer.de</a> ·
+      <a href="https://trust-unternehmer.de/impressum">Impressum</a> ·
+      <a href="https://trust-unternehmer.de/datenschutz">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Kopier-Knöpfe. ES5, ohne Abhängigkeiten.
+   data-ziel    = id eines <pre>: kopiert dessen Text unverändert
+   data-tabelle = id einer <table>: kopiert tabulatorgetrennt für Excel */
+(function () {
+  function tabelleAlsText(tabelle) {
+    var zeilen = tabelle.querySelectorAll('tr');
+    var aus = [];
+    for (var i = 0; i < zeilen.length; i++) {
+      var zellen = zeilen[i].querySelectorAll('th, td');
+      var werte = [];
+      for (var j = 0; j < zellen.length; j++) {
+        werte.push(zellen[j].textContent.replace(/\s+/g, ' ').trim());
+      }
+      aus.push(werte.join('\t'));
+    }
+    return aus.join('\n');
+  }
+
+  function rueckfall(text) {
+    var feld = document.createElement('textarea');
+    feld.value = text;
+    feld.setAttribute('readonly', '');
+    feld.style.position = 'fixed';
+    feld.style.top = '-1000px';
+    document.body.appendChild(feld);
+    feld.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(feld);
+    return ok;
+  }
+
+  function melden(knopf, ok) {
+    var alt = knopf.getAttribute('data-text') || knopf.textContent;
+    knopf.setAttribute('data-text', alt);
+    knopf.textContent = ok ? 'Kopiert ✓' : 'Bitte markieren und kopieren';
+    if (ok) { knopf.className += ' ok'; }
+    window.setTimeout(function () {
+      knopf.textContent = alt;
+      knopf.className = knopf.className.replace(/\s?ok\b/g, '');
+    }, 2000);
+  }
+
+  function kopieren(knopf, text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () {
+        melden(knopf, true);
+      }, function () {
+        melden(knopf, rueckfall(text));
+      });
+    } else {
+      melden(knopf, rueckfall(text));
+    }
+  }
+
+  var knoepfe = document.querySelectorAll('.kopieren');
+  for (var k = 0; k < knoepfe.length; k++) {
+    knoepfe[k].addEventListener('click', function () {
+      var ziel = this.getAttribute('data-ziel');
+      var tab = this.getAttribute('data-tabelle');
+      var text = '';
+      if (ziel) { text = document.getElementById(ziel).textContent; }
+      if (tab) { text = tabelleAlsText(document.getElementById(tab)); }
+      kopieren(this, text);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
