@@ -57,8 +57,9 @@
       <li><a href="#auftrag"><span>6</span>Prompt 2: Der Delegationsauftrag</a></li>
       <li><a href="#liste"><span>7</span>Die Delegationsliste</a></li>
       <li><a href="#montags-check"><span>8</span>Prompt 3: Der Montags-Check</a></li>
-      <li><a href="#quellen"><span>9</span>Quellen</a></li>
-      <li><a href="#weiter"><span>10</span>Wie es weitergeht</a></li>
+      <li><a href="#assistent"><span>9</span>Bonus: Dein Delegations-Assistent</a></li>
+      <li><a href="#quellen"><span>10</span>Quellen</a></li>
+      <li><a href="#weiter"><span>11</span>Wie es weitergeht</a></li>
     </ol>
   </nav>
 
@@ -153,37 +154,42 @@ Meine Aufgaben:
     <section class="mat-section mat-highlight" id="auftrag">
       <span class="mat-label">Prompt des Monats</span>
       <h2><span class="mat-nr">6</span>Prompt 2: Der Delegationsauftrag</h2>
-      <p>Aus deinen Stichworten wird ein vollständiger Auftrag: Ziel, Termin, Befugnisse, Ressourcen, Kontrollpunkte. Danach stellt dir die KI die Rückfragen, die dein Mitarbeiter stellen würde. <strong>Die Rückfragen sind die eigentliche Erkenntnis.</strong></p>
+      <p>Aus deinen Stichworten wird ein Auftrag, den du direkt per Mail verschicken kannst. Die KI geht in zwei Schritten vor: Erst stellt sie dir die Fragen, die dein Mitarbeiter stellen würde. <strong>Die Rückfragen sind die eigentliche Erkenntnis.</strong> Wenn du sie beantwortet hast, schreibt sie die fertige E-Mail, mit einer Zeile für deine Delegationsliste.</p>
       <div class="prompt">
         <div class="prompt-kopf"><strong>Prompt 2 · Der Delegationsauftrag</strong><button type="button" class="kopieren" data-ziel="p-auftrag">Kopieren</button></div>
 <pre id="p-auftrag">Ich möchte eine Aufgabe an <span class="ph">[Rolle, z. B. meine Teamleiterin Vertrieb]</span> übergeben.
 Erfahrung dieser Person mit so einer Aufgabe: <span class="ph">[neu / etwas Erfahrung / sehr erfahren]</span>
-Hier meine Stichworte:
+Anrede im Betrieb: <span class="ph">[Du / Sie]</span>
+Meine Stichworte:
 <span class="ph">[Stichworte – so, wie sie dir gerade einfallen]</span>
 
-Formuliere daraus einen Auftrag, den die Person ohne Rückfrage bei mir umsetzen kann:
-1. Ziel: Was soll am Ende herauskommen? Woran erkennen wir, dass es gut erledigt ist?
-2. Termin: Endtermin und sinnvolle Zwischentermine
-3. Befugnisse: Schlage eine Delegationsstufe vor (Setze um · Arbeite dich ein ·
-   Erarbeite einen Vorschlag · Entscheide mit Rückmeldung · Entscheide ohne Rückmeldung)
-   und sag konkret, was die Person selbst entscheidet und was sie mit mir abstimmt
-4. Ressourcen: Budget, Zeit, Ansprechpartner, Unterlagen
-5. Kontrollpunkte: Wann meldet sich die Person unaufgefordert bei mir, und mit was?
-   Wann frage ich nach, falls nichts kommt?
+Hilf mir, daraus einen Auftrag zu machen, der nicht wieder bei mir landet.
+Geh in zwei Schritten vor.
 
-Stelle mir danach die fünf Rückfragen, die mir die Person wahrscheinlich stellen würde.
-Zeig mir, an welcher Stelle die Aufgabe am ehesten wieder bei mir landen würde.
-Fasse zum Schluss alles in einer Zeile für meine Delegationsliste zusammen:
-Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt
-Schreib klar und knapp, ohne Floskeln.</pre>
+Schritt 1: Stell mir die fünf Fragen, die die Person mir wahrscheinlich stellen
+würde. Sag mir, an welcher Stelle die Aufgabe am ehesten wieder bei mir landen
+würde, und schlage eine Delegationsstufe vor (Setze um · Arbeite dich ein ·
+Erarbeite einen Vorschlag · Entscheide mit Rückmeldung · Entscheide ohne
+Rückmeldung). Dann warte auf meine Antworten.
+
+Schritt 2: Schreib den Auftrag als E-Mail an die Person, klar und freundlich,
+ohne Floskeln, mit diesen Punkten:
+- Ziel: Was soll am Ende herauskommen, woran erkennen wir, dass es gut ist?
+- Termin: Endtermin und Zwischentermine
+- Befugnisse: Was entscheidet die Person selbst, was stimmen wir ab?
+- Ressourcen: Budget, Zeit, Ansprechpartner, Unterlagen
+- Rückmeldung: Wann meldet sich die Person unaufgefordert, und mit was?
+Schließe mit dem Angebot, kurz darüber zu sprechen.
+Setze unter die E-Mail eine Zeile für meine Delegationsliste:
+Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt</pre>
       </div>
-      <p class="mat-tipp"><strong>Tipp:</strong> Schick den fertigen Auftrag nicht einfach per Mail. Nimm ihn als Spickzettel für das Übergabegespräch, dann reichen fünf Minuten.</p>
+      <p class="mat-tipp"><strong>Tipp:</strong> Den Namen setzt du erst in deinem Mailprogramm ein, nicht in der KI. Und die Mail ersetzt nicht das Gespräch, sie ist die Grundlage dafür: abschicken, dann kurz anrufen oder hingehen.</p>
     </section>
 
     <!-- 7 -->
     <section class="mat-section" id="liste">
       <h2><span class="mat-nr">7</span>Die Delegationsliste</h2>
-      <p>Aus den Augen, aus dem Sinn: Genau so verlaufen delegierte Aufgaben im Sande. Die KI erinnert dich nicht von selbst. Das System dahinter ist eine schlichte Liste, egal ob in Excel, Word oder im Notizbuch.</p>
+      <p>Aus den Augen, aus dem Sinn: Genau so verlaufen delegierte Aufgaben im Sande. Die KI erinnert dich nicht von selbst. Das System dahinter ist eine schlichte Liste, egal ob in Excel, Word oder im Notizbuch. Prompt 2 liefert dir zu jedem Auftrag die passende Zeile, die du nur noch hineinkopierst.</p>
       <div class="mat-tabelle">
         <table id="t-liste">
           <thead>
@@ -202,7 +208,7 @@ Schreib klar und knapp, ohne Floskeln.</pre>
       <p class="mat-tabelle-aktion"><button type="button" class="kopieren kopieren-hell" data-tabelle="t-liste">Als Tabelle für Excel kopieren</button></p>
       <p><strong>Zwei Gewohnheiten:</strong></p>
       <ol>
-        <li><strong>Kontrollpunkte sofort in den Kalender.</strong> Als Termin oder Outlook-Aufgabe mit Erinnerung, im Moment der Übergabe. Das ist dein eigentliches Erinnerungssystem.</li>
+        <li><strong>Outlook als Wecker.</strong> Die Auftrags-Mail nach dem Senden in „Gesendete Elemente“ zur Nachverfolgung kennzeichnen, mit Erinnerung am nächsten Kontrollpunkt. Dann erinnert dich Outlook rechtzeitig, und die gekennzeichneten Mails sind schon deine Delegationsliste.</li>
         <li><strong>Montags-Check, fünf Minuten.</strong> Die Liste einmal pro Woche der KI geben, mit Prompt 3.</li>
       </ol>
     </section>
@@ -229,8 +235,36 @@ Meine Liste:
     </section>
 
     <!-- 9 -->
+    <section class="mat-section" id="assistent">
+      <span class="mat-label">Bonus</span>
+      <h2><span class="mat-nr">9</span>Dein Delegations-Assistent</h2>
+      <p>Wer es noch bequemer will, richtet sich einmal einen eigenen Assistenten ein. Dann musst du keine Prompts mehr kopieren: Du nennst nur die Aufgabe, der Assistent stellt die Rückfragen, schreibt die Mail, liefert die Zeile für deine Liste und macht montags den Check.</p>
+      <p><strong>So geht’s:</strong> Die Anleitung unten kopieren und in das Feld für Anweisungen deines Werkzeugs einfügen, zum Beispiel bei einem eigenen GPT in ChatGPT, einem Projekt in Claude, einem Agenten in Microsoft Copilot oder einem Assistenten in Langdock. Diese Funktionen gibt es meist nur in den bezahlten Versionen. Im Betrieb nimm das Werkzeug, das freigegeben ist.</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Anleitung · Delegations-Assistent</strong><button type="button" class="kopieren" data-ziel="p-assistent">Kopieren</button></div>
+<pre id="p-assistent">Du bist mein Delegations-Assistent. Ich bin <span class="ph">[Geschäftsführer / Führungskraft mit Team]</span> in einem mittelständischen Betrieb. Du hilfst mir, Aufgaben so abzugeben, dass sie nicht wieder bei mir landen. Ich entscheide, du bereitest vor.
+
+Wenn ich dir eine Aufgabe nenne:
+1. Frag nach, falls es fehlt: an welche Rolle, wie erfahren die Person mit so einer Aufgabe ist, Du oder Sie.
+2. Stell mir die fünf Fragen, die die Person mir wahrscheinlich stellen würde. Sag mir, wo die Aufgabe am ehesten wieder bei mir landen würde, und schlage eine Delegationsstufe vor (Setze um · Arbeite dich ein · Erarbeite einen Vorschlag · Entscheide mit Rückmeldung · Entscheide ohne Rückmeldung). Warte auf meine Antworten.
+3. Schreib dann den Auftrag als E-Mail an die Person: Ziel, Termin, Befugnisse, Ressourcen, Rückmeldung. Klar und freundlich, ohne Floskeln, mit dem Angebot, kurz darüber zu sprechen.
+4. Setze darunter eine Zeile für meine Delegationsliste: Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt
+5. Erinnere mich in einem Satz daran, die Mail nach dem Senden zur Nachverfolgung zu kennzeichnen, mit Erinnerung am nächsten Kontrollpunkt.
+
+Wenn ich „Montags-Check“ schreibe und meine Liste einfüge:
+- Zeig mir, was überfällig ist und was in den nächsten 7 Tagen ansteht.
+- Zeig mir, wo ich seit über zwei Wochen nichts gehört habe.
+- Formuliere je eine kurze, freundliche Nachfrage: ergebnisorientiert, ohne Misstrauen, mit konkreter Frage.
+- Sag mir, wo eine Aufgabe gerade auf dem Weg zurück zu mir ist.
+
+Grundsätze: Arbeite mit Rollen statt Namen. Widersprich mir, wenn ich etwas selbst behalten will, das ich abgeben könnte. Schreib klar und knapp.</pre>
+      </div>
+      <p class="mat-tipp"><strong>Danach im Alltag:</strong> „Ich will die Kundenbefragung an meine Teamleiterin Vertrieb abgeben“, und los geht’s. Montags: „Montags-Check“ schreiben und die Liste einfügen.</p>
+    </section>
+
+    <!-- 10 -->
     <section class="mat-section" id="quellen">
-      <h2><span class="mat-nr">9</span>Quellen</h2>
+      <h2><span class="mat-nr">10</span>Quellen</h2>
       <ul class="quellen">
         <li><strong>Gallup:</strong> Gründer schnell wachsender Unternehmen, die gut delegieren, erzielen rund ein Drittel mehr Umsatz. Drei von vier Unternehmern tun sich mit dem Delegieren schwer.</li>
         <li><strong>Julian Birkinshaw und Jordan Cohen, London Business School:</strong> „Make Time for the Work That Matters“, Harvard Business Review. Wissensarbeiter verbringen im Schnitt rund 41 % ihrer Zeit mit Tätigkeiten, die andere genauso gut erledigen könnten.</li>
@@ -241,9 +275,9 @@ Meine Liste:
       </ul>
     </section>
 
-    <!-- 10 -->
+    <!-- 11 -->
     <section class="mat-section" id="weiter">
-      <h2><span class="mat-nr">10</span>Wie es weitergeht</h2>
+      <h2><span class="mat-nr">11</span>Wie es weitergeht</h2>
       <ul>
         <li><strong>Workbook:</strong> Alle Angemeldeten bekommen in den nächsten Tagen das Workbook mit allen Inhalten dieser Seite und den Antworten auf die Fragen aus der Runde.</li>
         <li><strong>Nächster KI-Talk:</strong> Freitag, 13. November 2026, 8:30 bis 9:30 Uhr · <strong>Meetings, die etwas ergeben.</strong> <a href="https://ki-talk.trust-unternehmer.de/#anmeldung">Anmelden</a></li>
