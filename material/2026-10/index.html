@@ -8,7 +8,8 @@
   Neuer Monat: Ordner kopieren nach material/JJJJ-MM/ und austauschen:
     - <title>, Kicker-Datum, H1, Datumszeile, Einleitung
     - Inhaltsverzeichnis und Abschnitte (Nummern = Reihenfolge im Talk)
-    - Prompt-Texte (in <pre>, Platzhalter in <span class="ph">)
+    - Prompt-Texte (in <pre>, Platzhalter in <span class="ph">,
+      Beispiele in <mark class="beispiel">)
     - Quellen und Abschnitt „Wie es weitergeht“
   Gleich bleiben: Kopf, Hinweiskasten Datenschutz, Fußzeile, Skript,
   material/material.css, robots noindex.
@@ -49,6 +50,7 @@
   <nav class="mat-toc" aria-label="Inhalt dieser Seite">
     <h2>Inhalt</h2>
     <ol>
+      <li><a href="#warum"><span></span>Warum es sich lohnt</a></li>
       <li><a href="#affe"><span>1</span>Der Affe auf der Schulter</a></li>
       <li><a href="#fehler"><span>2</span>Die fünf häufigsten Fehler</a></li>
       <li><a href="#schritte"><span>3</span>Die 7 Schritte</a></li>
@@ -58,6 +60,7 @@
       <li><a href="#liste"><span>7</span>Die Delegationsliste</a></li>
       <li><a href="#montags-check"><span>8</span>Prompt 3: Der Montags-Check</a></li>
       <li><a href="#assistent"><span>9</span>Bonus: Dein Delegations-Assistent</a></li>
+      <li><a href="#fragen"><span></span>Deine Fragen</a></li>
       <li><a href="#quellen"><span>10</span>Quellen</a></li>
       <li><a href="#weiter"><span>11</span>Wie es weitergeht</a></li>
     </ol>
@@ -65,9 +68,23 @@
 
   <main id="inhalt" class="mat-content">
 
+    <div class="mat-ablauf">
+      <p><strong>So läuft die Stunde:</strong> eine Führungsaufgabe · drei Prompts zum Mitmachen · deine Fragen.</p>
+      <p><strong>So machst du mit:</strong> Öffne in deinem KI-Werkzeug einen neuen Chat. Alle Prompts von heute schickst du nacheinander <strong>in diesem einen Chat</strong> ab. Wer kein KI-Werkzeug hat, schaut einfach zu.</p>
+    </div>
+
     <div class="mat-hinweis">
       <p><strong>Bevor du etwas in ein KI-Werkzeug eingibst:</strong> Rollen statt Namen („meine Teamleiterin Vertrieb“, nicht „Frau Müller“). Keine vertraulichen Details, keine Kundendaten. Wenn dein Betrieb ein KI-Werkzeug freigegeben hat, nimm das.</p>
     </div>
+
+    <!-- Warum es sich lohnt -->
+    <section class="mat-section" id="warum">
+      <h2>Warum es sich lohnt</h2>
+      <figure class="folie"><img src="img/01-erkenntnisse.png" alt="Zwei Kennzahlen: Gründer, die gut delegieren, erzielen rund ein Drittel mehr Umsatz (Gallup). 41 Prozent der Arbeitszeit gehen in Dinge, die andere genauso gut erledigen könnten (London Business School)." width="1600" height="900" loading="lazy"></figure>
+      <p>Wer gut delegiert, wächst stärker: Gründer schnell wachsender Unternehmen, die gut delegieren, erzielen rund ein Drittel mehr Umsatz. Und Wissensarbeiter verbringen rund 41 % ihrer Zeit mit Dingen, die andere genauso gut erledigen könnten.</p>
+      <p class="merksatz">Wer wächst, gibt ab. Kein Automatismus, aber ein deutlicher Zusammenhang.</p>
+      <p class="weiter"><a href="#affe">→ Warum landet es trotzdem immer wieder bei dir? Punkt 1</a></p>
+    </section>
 
     <!-- 1 -->
     <section class="mat-section" id="affe">
@@ -75,6 +92,11 @@
       <blockquote><p>Ein Mitarbeiter spricht dich auf dem Flur an: „Chef, wir haben da ein Problem.“ Du sagst: „Lass mich mal drüber nachdenken, ich melde mich.“ In diesem Moment ist der Affe auf deine Schulter gesprungen. Das Problem gehörte dem Mitarbeiter, jetzt gehört es dir. Und jetzt wartet er auf dich.</p></blockquote>
       <p><strong>Die Gegenfrage, die den Affen beim Mitarbeiter lässt:</strong> „Was schlägst du vor?“ Oder: „Komm morgen mit zwei Lösungsvorschlägen, dann entscheiden wir.“</p>
       <p class="mat-quelle">Nach dem Klassiker „Who’s Got the Monkey?“ von William Oncken und Donald Wass, Harvard Business Review.</p>
+      <div class="leitfrage">
+        <span class="leitfrage-kicker">Frage an dich</span>
+        <p>Wie viele Affen sitzen gerade auf deiner Schulter? Schätz mal eine Zahl und schreib sie in den Chat.</p>
+      </div>
+      <p class="merksatz">Der Affe bleibt beim Mitarbeiter.</p>
     </section>
 
     <!-- 2 -->
@@ -89,12 +111,14 @@
             <tr><td><strong>Mangelnde Kommunikation</strong></td><td>Aufgabe nur zwischen Tür und Angel besprochen</td><td>Übergabegespräch, Nachfragen zulassen</td></tr>
             <tr><td><strong>Unklare Erwartungen</strong></td><td>Der Mitarbeiter weiß nicht, was am Ende rauskommen soll</td><td>Ergebnis und Termin festlegen</td></tr>
             <tr><td><strong>Rückdelegation</strong></td><td>Bei Überforderung oder weil es bequemer ist, kommt die Aufgabe unfertig zurück</td><td>Der Affe bleibt beim Mitarbeiter</td></tr>
-            <tr><td><strong>Zu wenig Kontrolle</strong></td><td>Die Aufgabe gerät in Vergessenheit, keiner meldet sich, keiner fragt nach</td><td>Kontrollpunkte vorher vereinbaren und nachhalten</td></tr>
+            <tr><td><strong>Zu wenig Kontrolle</strong></td><td>Die Aufgabe gerät in Vergessenheit, keiner meldet sich, keiner fragt nach</td><td>Kontrollpunkte vorher vereinbaren und nachhalten<span class="mat-verweis"> · mehr dazu in <a href="#liste">Punkt 7</a> und <a href="#montags-check">8</a></span></td></tr>
             <tr><td><strong>Fehlende Vertrauensbasis</strong></td><td>Kontrolle wird als Misstrauen erlebt, oder der Chef macht es lieber selbst</td><td>Das Ergebnis prüfen, nicht jeden Handgriff</td></tr>
           </tbody>
         </table>
       </div>
       <p class="mat-tipp"><strong>Gut zu wissen:</strong> Führungskräfte bewerten dieselbe Arbeit besser, wenn sie selbst stärker daran beteiligt waren. Das Gefühl „bei mir wird’s besser“ ist also zum Teil eine Wahrnehmungstäuschung.</p>
+      <p class="merksatz">Fast alle fünf Fehler haben dieselbe Ursache: Der Auftrag war nicht durchdacht, und keiner hat nachgehalten.</p>
+      <p>Ein guter Auftrag kostet 15 bis 20 Minuten Nachdenken. Die hat man im Tagesgeschäft nicht. Genau diese Denkarbeit nimmt dir die KI heute zu großen Teilen ab.</p>
     </section>
 
     <!-- 3 -->
@@ -110,128 +134,272 @@
         <li><strong>Feedback nutzen.</strong> Anerkennen, Verbesserung benennen.</li>
       </ol>
       <p><em>Unterstützung und Anerkennung gibt ein Mensch. Bei den anderen fünf Schritten nimmt dir die KI die Vorarbeit ab.</em></p>
+      <p class="weiter"><a href="#wochenliste">→ Los geht's mit Schritt 1: Was kann ich abgeben? Punkt 4</a></p>
     </section>
 
     <!-- 4 -->
     <section class="mat-section" id="wochenliste">
       <h2><span class="mat-nr">4</span>Prompt 1: Die Wochenliste</h2>
-      <p>Was liegt auf deinem Tisch, das dort nicht hingehört? Füge deine Aufgaben der Woche ein, so wie sie dir einfallen. Die KI sortiert, du entscheidest.</p>
+      <figure class="folie"><img src="img/04-eisenhower-ki.png" alt="Vier Gruppen nach der Eisenhower-Logik: Selbst machen, Delegieren, Weglassen, KI bereitet vor. Die KI sortiert deine Wochenliste und zeigt, wo sie dir die Vorarbeit abnimmt." width="1600" height="900" loading="lazy"></figure>
+      <p>Was liegt auf deinem Tisch, das dort nicht hingehört? Die KI sortiert deine Aufgaben in vier Gruppen und zeigt bei jeder, wo sie dir die Vorarbeit abnimmt. Zum Ausprobieren ist eine Beispielwoche schon eingefügt: kopieren, einfügen, abschicken.</p>
+      <p class="legende">Orange markiert = Beispiel. Für dich ersetzt du diese Stellen durch deine eigenen Angaben.</p>
       <div class="prompt">
         <div class="prompt-kopf"><strong>Prompt 1 · Die Wochenliste</strong><button type="button" class="kopieren" data-ziel="p-wochenliste">Kopieren</button></div>
-<pre id="p-wochenliste">Ich bin <span class="ph">[Geschäftsführer / Führungskraft mit Team]</span> in einem mittelständischen Betrieb mit rund <span class="ph">[Anzahl]</span> Mitarbeitern.
+<pre id="p-wochenliste">Ich bin <mark class="beispiel">Geschäftsführer</mark> in einem mittelständischen Betrieb mit rund <mark class="beispiel">45</mark> Mitarbeitern.
 Unten steht alles, was diese Woche auf meinem Tisch liegt.
 
 Sortiere die Aufgaben in vier Gruppen:
-1. Muss ich selbst machen – weil nur ich es entscheiden oder verantworten kann
-2. Kann ich delegieren – mit Vorschlag, an welche Rolle
-3. Kann ich weglassen oder deutlich reduzieren
-4. Kann die KI vorbereiten, ich entscheide dann
+1. Selbst machen – weil nur ich es entscheiden oder verantworten kann
+2. Delegieren – mit Vorschlag, an welche Rolle
+3. Weglassen oder deutlich reduzieren
+4. KI bereitet vor – ich entscheide dann
 
-Begründe jede Zuordnung in einem Satz. Sei kritisch: Wenn ich mir bei Gruppe 1
-etwas vormache, sag es mir.
+Sei kritisch: Wenn ich mir bei Gruppe 1 etwas vormache, sag es mir.
 
-Meine Aufgaben:
-<span class="ph">[Liste einfügen]</span></pre>
+Antworte kompakt:
+- Eine einzige Tabelle mit den Spalten: Gruppe | Aufgabe | Wer macht es | KI-Vorarbeit
+- In der Spalte Gruppe jeweils Nummer und Kurzname, z. B. „2 · Delegieren“
+- Sortiert nach Gruppe 1 bis 4
+- Spalte „KI-Vorarbeit“: in jeder Zeile prüfen, was die KI vorbereiten kann, höchstens 8 Wörter; wenn nichts Sinnvolles, ein Strich
+- Spalte „Wer macht es“: Rolle, höchstens 6 Wörter
+- Schließe in jedem Fall mit genau einem Satz unter der Tabelle: dein wichtigster kritischer Hinweis an mich
+- Keine Einleitung, keine weiteren Abschnitte
+
+Meine Aufgaben (Beispielwoche – ersetze sie durch deine eigene Liste):
+<mark class="beispiel">- Angebot Großkunde prüfen und freigeben (Volumen ca. 180.000 €)</mark>
+<mark class="beispiel">- Urlaubsplanung Weihnachten abstimmen (Produktion, 3 Schichten)</mark>
+<mark class="beispiel">- Messeauftritt März: erste Ideen sammeln</mark>
+<mark class="beispiel">- Rechnungen freigeben (ca. 40 pro Woche, auch Kleinbeträge)</mark>
+<mark class="beispiel">- Bewerbungsgespräch Vertriebsinnendienst</mark>
+<mark class="beispiel">- Monatszahlen September kommentieren</mark>
+<mark class="beispiel">- Beschwerde Kunde X beantworten (Lieferverzug, langjähriger Kunde)</mark>
+<mark class="beispiel">- Lieferantengespräch Preiserhöhung vorbereiten</mark>
+<mark class="beispiel">- Protokoll Teamleiter-Runde schreiben</mark>
+<mark class="beispiel">- Website-Text Karriereseite prüfen</mark>
+<mark class="beispiel">- Jahresgespräche planen (12 Mitarbeiter direkt)</mark>
+<mark class="beispiel">- Rückruf Steuerberater</mark>
+<mark class="beispiel">- Social-Media-Beitrag Firmenjubiläum</mark></pre>
       </div>
-      <p class="mat-tipp"><strong>Tipp:</strong> Widersprich der KI, wo sie danebenliegt. Du kennst deinen Betrieb, sie nicht.</p>
+      <p class="mat-tipp"><strong>Tipp:</strong> Widersprich der KI, wo sie danebenliegt. Du kennst deinen Betrieb, sie nicht. Jedes Ergebnis fällt etwas anders aus, das ist normal.</p>
+      <p class="merksatz">Weglassen heißt: von deinem Tisch, nicht aus dem Betrieb.</p>
+      <p class="merksatz">Selbst bei den Aufgaben, die du behältst, nimmt dir die KI die Vorarbeit ab.</p>
+      <p class="weiter"><a href="#stufen">→ Jetzt weißt du, was du abgeben kannst. Aber wie, ohne dass der Affe zurückspringt? Punkt 5</a></p>
     </section>
 
     <!-- 5 -->
     <section class="mat-section" id="stufen">
       <h2><span class="mat-nr">5</span>Die fünf Delegationsstufen</h2>
       <p>Wie viel darf der andere selbst entscheiden? Wer die Stufe nicht nennt, bekommt entweder Rückfragen zu allem, oder es wird etwas entschieden, was du selbst entscheiden wolltest.</p>
-      <ol class="stufen">
-        <li><strong>1 · Setze um.</strong> Ich sage genau, was zu tun ist.</li>
-        <li><strong>2 · Arbeite dich ein.</strong> Mach dich schlau, dann sprechen wir.</li>
-        <li><strong>3 · Erarbeite einen Vorschlag.</strong> Ich entscheide.</li>
-        <li><strong>4 · Entscheide und gib mir Rückmeldung.</strong></li>
-        <li><strong>5 · Entscheide ohne Rückmeldung.</strong></li>
-      </ol>
+      <figure class="folie"><img src="img/05-delegationsstufen.png" alt="Fünf Delegationsstufen als Treppe: 1 Setze um, 2 Arbeite dich ein, 3 Erarbeite einen Vorschlag (Affen-Schutz), 4 Entscheide mit Rückmeldung, 5 Entscheide ohne Rückmeldung. Mit Erfahrung und Vertrauen wächst die Stufe." width="1600" height="900" loading="lazy"></figure>
+      <details class="alstext">
+        <summary>Als Text anzeigen</summary>
+        <ol class="stufen">
+          <li><strong>1 · Setze um.</strong> Ich sage genau, was zu tun ist.</li>
+          <li><strong>2 · Arbeite dich ein.</strong> Mach dich schlau, dann sprechen wir.</li>
+          <li><strong>3 · Erarbeite einen Vorschlag.</strong> Ich entscheide.</li>
+          <li><strong>4 · Entscheide und gib mir Rückmeldung.</strong></li>
+          <li><strong>5 · Entscheide ohne Rückmeldung.</strong></li>
+        </ol>
+      </details>
       <p>Welche Stufe passt, hängt davon ab, wie erfahren jemand mit genau dieser Art Aufgabe ist. <strong>Stufe 3 ist der Affen-Schutz:</strong> „Komm mit einem Vorschlag“ lässt die Aufgabe beim Mitarbeiter.</p>
+      <p class="merksatz">Wer die Stufe nicht nennt, bekommt Rückfragen zu allem oder Entscheidungen, die er selbst treffen wollte.</p>
+      <p class="weiter"><a href="#auftrag">→ Aus Stichworten wird ein Auftrag: Punkt 6</a></p>
     </section>
 
     <!-- 6 -->
     <section class="mat-section mat-highlight" id="auftrag">
       <span class="mat-label">Prompt des Monats</span>
       <h2><span class="mat-nr">6</span>Prompt 2: Der Delegationsauftrag</h2>
-      <p>Aus deinen Stichworten wird ein Auftrag, den du direkt per Mail verschicken kannst. Die KI geht in zwei Schritten vor: Erst stellt sie dir die Fragen, die dein Mitarbeiter stellen würde. <strong>Die Rückfragen sind die eigentliche Erkenntnis.</strong> Wenn du sie beantwortet hast, schreibt sie die fertige E-Mail, mit einer Zeile für deine Delegationsliste.</p>
+      <p>Aus deinen Stichworten wird ein Auftrag, der nicht wieder bei dir landet. Erst stellt dir die KI die fünf Fragen, die dein Mitarbeiter stellen würde. <strong>Die Rückfragen sind die eigentliche Erkenntnis.</strong> Dann schreibt sie die E-Mail mit Ziel, Terminen, Befugnissen, Ressourcen und Rückmeldung, dazu die Zeile für deine Delegationsliste. Als Beispiel nehmen wir die Urlaubsplanung aus der Wochenliste.</p>
+      <p class="legende">Orange markiert = Beispiel. Für dich ersetzt du diese Stellen durch deine eigenen Angaben.</p>
       <div class="prompt">
         <div class="prompt-kopf"><strong>Prompt 2 · Der Delegationsauftrag</strong><button type="button" class="kopieren" data-ziel="p-auftrag">Kopieren</button></div>
-<pre id="p-auftrag">Ich möchte eine Aufgabe an <span class="ph">[Rolle, z. B. meine Teamleiterin Vertrieb]</span> übergeben.
-Erfahrung dieser Person mit so einer Aufgabe: <span class="ph">[neu / etwas Erfahrung / sehr erfahren]</span>
-Anrede im Betrieb: <span class="ph">[Du / Sie]</span>
-Meine Stichworte:
-<span class="ph">[Stichworte – so, wie sie dir gerade einfallen]</span>
+<pre id="p-auftrag">Ich möchte eine Aufgabe an <mark class="beispiel">meinen Schichtleiter Produktion</mark> übergeben.
+Erfahrung dieser Person mit so einer Aufgabe: <mark class="beispiel">etwas Erfahrung</mark>
+Anrede im Betrieb: <mark class="beispiel">Du</mark>
+Meine Stichworte (Beispiel – ersetze sie durch deine eigene Aufgabe):
+<mark class="beispiel">Urlaubsplanung Weihnachten und zwischen den Jahren für die Produktion, 3 Schichten.</mark>
+<mark class="beispiel">Viele wollen frei, aber wir haben eine Lieferzusage für einen Großkunden in KW 52.</mark>
+<mark class="beispiel">Plan soll bis 15. Oktober stehen, damit alle früh Bescheid wissen.</mark>
+<mark class="beispiel">Resturlaub aus diesem Jahr berücksichtigen.</mark>
 
 Hilf mir, daraus einen Auftrag zu machen, der nicht wieder bei mir landet.
 Geh in zwei Schritten vor.
 
-Schritt 1: Stell mir die fünf Fragen, die die Person mir wahrscheinlich stellen
-würde. Sag mir, an welcher Stelle die Aufgabe am ehesten wieder bei mir landen
-würde, und schlage eine Delegationsstufe vor (Setze um · Arbeite dich ein ·
-Erarbeite einen Vorschlag · Entscheide mit Rückmeldung · Entscheide ohne
-Rückmeldung). Dann warte auf meine Antworten.
+Schritt 1: Antworte in einer einzigen Nachricht mit genau drei Teilen:
+- Die fünf Fragen, die die Person mir wahrscheinlich stellen würde, als
+  nummerierte Liste. Keine Auswahlfelder, keine Antwortvorschläge, keine
+  Rückfragen nacheinander.
+- In einem Satz: An welcher Stelle würde die Aufgabe am ehesten wieder bei mir
+  landen?
+- In einem Satz: Welche Delegationsstufe schlägst du vor (Setze um · Arbeite dich
+  ein · Erarbeite einen Vorschlag · Entscheide mit Rückmeldung · Entscheide ohne
+  Rückmeldung)?
+Dann hör auf und warte auf meine Antworten.
 
-Schritt 2: Schreib den Auftrag als E-Mail an die Person, klar und freundlich,
-ohne Floskeln, mit diesen Punkten:
+Schritt 2: Schreib den Auftrag als kurze E-Mail an die Person, klar und
+freundlich, ohne Floskeln. Höchstens 150 Wörter. Je Punkt eine Zwischenüberschrift
+und höchstens zwei kurze Sätze oder Stichpunkte:
 - Ziel: Was soll am Ende herauskommen, woran erkennen wir, dass es gut ist?
-- Termin: Endtermin und Zwischentermine
+- Termin: Endtermin und Zwischentermine, als Stichpunkte mit Datum
 - Befugnisse: Was entscheidet die Person selbst, was stimmen wir ab?
 - Ressourcen: Budget, Zeit, Ansprechpartner, Unterlagen
 - Rückmeldung: Wann meldet sich die Person unaufgefordert, und mit was?
-Schließe mit dem Angebot, kurz darüber zu sprechen.
-Setze unter die E-Mail eine Zeile für meine Delegationsliste:
-Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt</pre>
+Schließe mit einem Satz: dem Angebot, kurz darüber zu sprechen.
+Setze unter die E-Mail eine Tabelle mit genau einer Zeile für meine
+Delegationsliste, Spalten: Aufgabe | Rolle | Stufe | Endtermin |
+nächster Kontrollpunkt | letzter Stand. In „letzter Stand“ steht: Auftrag übergeben</pre>
       </div>
-      <p class="mat-tipp"><strong>Tipp:</strong> Den Namen setzt du erst in deinem Mailprogramm ein, nicht in der KI. Und die Mail ersetzt nicht das Gespräch, sie ist die Grundlage dafür: abschicken, dann kurz anrufen oder hingehen.</p>
+
+      <h3>Weiter zur E-Mail: zwei Wege</h3>
+      <div class="prompt-paar">
+        <div>
+          <p>Im selben Chat direkt nach Prompt 2 abschicken. Die KI beantwortet ihre Fragen selbst, damit wir heute nicht tippen müssen.</p>
+          <div class="prompt">
+            <div class="prompt-kopf"><strong>Prompt 2b · Für die Vorführung</strong><button type="button" class="kopieren" data-ziel="p-auftrag-vorfuehrung">Kopieren</button></div>
+<pre id="p-auftrag-vorfuehrung">Beantworte die Rückfragen selbst mit plausiblen Annahmen für einen
+mittelständischen Produktionsbetrieb und markiere jede Annahme mit [Annahme].
+Dann mach mit Schritt 2 weiter.</pre>
+          </div>
+        </div>
+        <div>
+          <p>Im Alltag beantwortest du die Fragen selbst, in Stichworten, zwei Minuten. Genau das ist die Denkarbeit, die vorher 20 Minuten gedauert hat.</p>
+          <div class="prompt">
+            <div class="prompt-kopf"><strong>Prompt 2c · Im Alltag</strong><button type="button" class="kopieren" data-ziel="p-auftrag-alltag">Kopieren</button></div>
+<pre id="p-auftrag-alltag">Hier meine Antworten auf deine Fragen:
+1. <span class="ph">[deine Antwort]</span>
+2. <span class="ph">[deine Antwort]</span>
+3. <span class="ph">[deine Antwort]</span>
+4. <span class="ph">[deine Antwort]</span>
+5. <span class="ph">[deine Antwort]</span>
+
+Wo ich keine Antwort gegeben habe, triff eine sinnvolle Annahme und markiere sie
+mit [Annahme]. Dann mach mit Schritt 2 weiter.</pre>
+          </div>
+        </div>
+      </div>
+
+      <figure class="folie"><img src="img/06-delegieren-prompten.png" alt="Wer gut delegiert, promptet gut: Dein Mitarbeiter braucht einen klaren Auftrag, die KI einen klaren Prompt. Beide brauchen Ziel, Rahmen, Befugnis und Rückmeldung." width="1600" height="900" loading="lazy"></figure>
+      <p class="merksatz">Wer gut delegiert, promptet gut. Und umgekehrt.</p>
+      <p class="mat-tipp"><strong>Tipp:</strong> Die E-Mail ersetzt nicht das Gespräch, sie ist die Grundlage dafür. Schick sie ab und ruf kurz an oder geh hin. Prüf vorher die markierten Annahmen und die Termine. Den Namen setzt du erst in Outlook ein, nicht in der KI.</p>
+      <p class="weiter"><a href="#liste">→ Übergeben ist erst die halbe Miete: Punkt 7</a></p>
     </section>
 
     <!-- 7 -->
     <section class="mat-section" id="liste">
       <h2><span class="mat-nr">7</span>Die Delegationsliste</h2>
-      <p>Aus den Augen, aus dem Sinn: Genau so verlaufen delegierte Aufgaben im Sande. Die KI erinnert dich nicht von selbst. Das System dahinter ist eine schlichte Liste, egal ob in Excel, Word oder im Notizbuch. Prompt 2 liefert dir zu jedem Auftrag die passende Zeile, die du nur noch hineinkopierst.</p>
+      <p>Aus den Augen, aus dem Sinn: Genau so verlaufen delegierte Aufgaben im Sande. Die KI erinnert dich nicht von selbst. Das System dahinter ist eine schlichte Liste in Excel, und ein fester Termin pro Woche.</p>
+      <figure class="folie"><img src="img/07-nachhalten-kreislauf.png" alt="Kreislauf in vier Schritten: Auftrag per Mail (Prompt 2), in Liste und Outlook (eine Minute), Montags-Check mit KI (Prompt 3), anrufen und eintragen (Prompt 3b). Jede Woche, bis das Ergebnis da ist." width="1600" height="900" loading="lazy"></figure>
+
+      <h3>So entsteht deine Delegationsliste</h3>
+      <ol>
+        <li><strong>Einmal anlegen:</strong> eine Excel-Tabelle mit sechs Spalten. Die Vorlage unten kopierst du mit einem Klick.</li>
+        <li><strong>Nach jedem Auftrag:</strong> die Tabellenzeile unter der E-Mail aus Prompt 2 kopieren und in deine Liste einfügen. Zehn Sekunden.</li>
+        <li><strong>Als Wecker:</strong> die Auftrags-Mail in Outlook unter „Gesendete Elemente“ zur Nachverfolgung kennzeichnen, mit Erinnerung am Kontrollpunkt.</li>
+        <li><strong>Jeden Montag:</strong> die ganze Liste kopieren und mit Prompt 3 prüfen lassen (<a href="#montags-check">Punkt 8</a>).</li>
+      </ol>
+
+      <h3>Eine Aufgabe, eine Zeile</h3>
+      <p>Wenn sich etwas tut, schreibst du die Zeile fort, statt eine neue anzulegen:</p>
+      <div class="mat-tabelle mat-tabelle-klein">
+        <table>
+          <thead>
+            <tr><th>Spalte</th><th>Was passiert</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Aufgabe, Rolle, Stufe</td><td>bleiben, außer du senkst die Stufe oder vergibst neu</td></tr>
+            <tr><td>Endtermin</td><td>überschreiben, wenn ein neuer Endtermin vereinbart ist</td></tr>
+            <tr><td>Nächster Kontrollpunkt</td><td>mit dem neuen Datum überschreiben</td></tr>
+            <tr><td>Letzter Stand</td><td>mit Datum und Vereinbarung überschreiben, z. B. „12.10.: Entwurf liegt vor“</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Ausnahme:</strong> Wurde ein Termin verschoben, schreib „verschoben auf …“ dazu und lass die bisherigen Verschiebungen stehen. Nur so erkennst du (und die KI), wer schon einmal vertröstet hat. <strong>Erledigt?</strong> Zeile löschen oder auf ein zweites Tabellenblatt „Erledigt“ verschieben.</p>
+
+      <h3>Vorlage mit Beispiel</h3>
       <div class="mat-tabelle">
         <table id="t-liste">
           <thead>
             <tr><th>Aufgabe</th><th>Rolle</th><th>Stufe</th><th>Endtermin</th><th>Nächster Kontrollpunkt</th><th>Letzter Stand</th></tr>
           </thead>
           <tbody>
-            <tr><td>Kundenbefragung Top-30 aufsetzen</td><td>Teamleiterin Vertrieb</td><td>3</td><td>30.10.</td><td>12.10.</td><td>Fragebogen-Entwurf angekündigt</td></tr>
-            <tr><td>Angebote Messestand einholen</td><td>Assistenz Geschäftsführung</td><td>2</td><td>23.10.</td><td>02.10.</td><td>nichts gehört</td></tr>
-            <tr><td>Urlaubsplanung Weihnachten</td><td>Schichtleiter Produktion</td><td>4</td><td>15.10.</td><td>07.10.</td><td>Entwurf liegt vor</td></tr>
-            <tr><td>Einarbeitungsplan neuer Mitarbeiter</td><td>Teamleiter Lager</td><td>3</td><td>31.10.</td><td>19.10.</td><td>–</td></tr>
-            <tr><td>Lieferantenvergleich Verpackung</td><td>Einkauf</td><td>3</td><td>25.09.</td><td>18.09.</td><td>„ich kümmere mich“, seit drei Wochen nichts</td></tr>
-            <tr><td>Karriereseite überarbeiten</td><td>Marketing</td><td>4</td><td>06.11.</td><td>16.10.</td><td>erste Texte in Arbeit</td></tr>
+            <tr><td>Kundenbefragung Top-30 aufsetzen</td><td>Teamleiterin Vertrieb</td><td>Erarbeite einen Vorschlag</td><td>30.10.</td><td>12.10.</td><td>05.10.: Fragebogen-Entwurf angekündigt</td></tr>
+            <tr><td>Angebote Messestand einholen</td><td>Assistenz Geschäftsführung</td><td>Arbeite dich ein</td><td>23.10.</td><td>02.10.</td><td>18.09.: Auftrag übergeben, seitdem nichts gehört</td></tr>
+            <tr><td>Urlaubsplanung Weihnachten</td><td>Schichtleiter Produktion</td><td>Entscheide mit Rückmeldung</td><td>15.10.</td><td>13.10.</td><td>09.10.: Auftrag per Mail übergeben</td></tr>
+            <tr><td>Einarbeitungsplan neuer Mitarbeiter</td><td>Teamleiter Lager</td><td>Erarbeite einen Vorschlag</td><td>31.10.</td><td>19.10.</td><td>06.10.: Gliederung liegt vor</td></tr>
+            <tr><td>Lieferantenvergleich Verpackung</td><td>Einkauf</td><td>Erarbeite einen Vorschlag</td><td>02.10.</td><td>02.10.</td><td>15.09.: „ich kümmere mich“; 25.09.: verschoben auf 02.10.; seitdem nichts</td></tr>
+            <tr><td>Karriereseite überarbeiten</td><td>Marketing</td><td>Entscheide mit Rückmeldung</td><td>06.11.</td><td>16.10.</td><td>07.10.: erste Texte in Arbeit</td></tr>
           </tbody>
         </table>
       </div>
       <p class="mat-tabelle-aktion"><button type="button" class="kopieren kopieren-hell" data-tabelle="t-liste">Als Tabelle für Excel kopieren</button></p>
-      <p><strong>Zwei Gewohnheiten:</strong></p>
-      <ol>
-        <li><strong>Outlook als Wecker.</strong> Die Auftrags-Mail nach dem Senden in „Gesendete Elemente“ zur Nachverfolgung kennzeichnen, mit Erinnerung am nächsten Kontrollpunkt. Dann erinnert dich Outlook rechtzeitig, und die gekennzeichneten Mails sind schon deine Delegationsliste.</li>
-        <li><strong>Montags-Check, fünf Minuten.</strong> Die Liste einmal pro Woche der KI geben, mit Prompt 3.</li>
-      </ol>
+      <p class="weiter"><a href="#montags-check">→ Der Montags-Check: Punkt 8</a></p>
     </section>
 
     <!-- 8 -->
     <section class="mat-section" id="montags-check">
       <h2><span class="mat-nr">8</span>Prompt 3: Der Montags-Check</h2>
-      <p>Einmal pro Woche: Was ist überfällig, wo hast du nichts gehört, und wie fragst du nach, ohne dass es nach Misstrauen klingt?</p>
+      <p>Einmal pro Woche, fünf Minuten: Was ist überfällig, wo hast du nichts gehört, wer hat schon einmal verschoben? Und wie fragst du nach, ohne dass es nach Misstrauen klingt? Zum Ausprobieren ist die Beispielliste von oben schon eingefügt, mit der Urlaubsplanung aus Prompt 2. Für dich ersetzt du die markierten Stellen durch deine eigene Liste und das heutige Datum.</p>
+      <p class="legende">Orange markiert = Beispiel. Für dich ersetzt du diese Stellen durch deine eigenen Angaben.</p>
       <div class="prompt">
         <div class="prompt-kopf"><strong>Prompt 3 · Der Montags-Check</strong><button type="button" class="kopieren" data-ziel="p-montag">Kopieren</button></div>
-<pre id="p-montag">Unten steht meine Liste delegierter Aufgaben. Heute ist <span class="ph">[Datum]</span>.
-1. Welche Aufgaben sind überfällig, und welche haben in den nächsten 7 Tagen
-   einen Kontrollpunkt?
-2. Bei welchen habe ich seit über zwei Wochen nichts gehört?
-3. Formuliere für jede dieser Aufgaben eine kurze, freundliche Nachfrage an die
-   Person: ergebnisorientiert, ohne Misstrauen, mit konkreter Frage
-   („Wo stehst du? Was brauchst du von mir? Was läuft anders als gedacht?“).
-4. Wo sieht es so aus, als käme die Aufgabe gerade zu mir zurück?
+<pre id="p-montag">Unten steht meine Liste delegierter Aufgaben. Heute ist <mark class="beispiel">Freitag, der 9. Oktober 2026</mark>.
 
-Meine Liste:
-<span class="ph">[Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt | letzter Stand]</span></pre>
+Antworte kompakt, ohne Einleitung. Nenne bei jeder Aufgabe die Rolle.
+1. Überfällig, weil Endtermin oder Kontrollpunkt überschritten: eine Zeile je
+   Aufgabe, mit was und wie lange schon
+2. Kontrollpunkt in den nächsten 7 Tagen: eine Zeile je Aufgabe
+3. Seit über zwei Wochen nichts gehört: eine Zeile je Aufgabe
+4. Für jede Aufgabe aus 1 und 3 ein kurzer Leitfaden für einen Anruf, Du-Form:
+   - Einstieg: ein Satz, freundlich und ohne Vorwurf
+   - Frage: eine konkrete Frage zu genau dieser Aufgabe
+   - Vereinbarung: was genau ich bis wann am Ende des Gesprächs zugesagt haben will
+   - Bestätigung: zwei Sätze, die ich nach dem Anruf per Mail schicke
+5. Wurde eine Aufgabe schon einmal verschoben? Dann empfiehl in einem Satz den
+   nächsten Schritt: enger begleiten, Delegationsstufe senken oder neu vergeben.
+6. Ein Satz: Welche Aufgabe droht gerade zu mir zurückzukommen, und warum?
+
+Meine Liste (Beispiel – ersetze sie durch deine eigene Liste und das heutige Datum):
+Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt | letzter Stand
+<mark class="beispiel">Kundenbefragung Top-30 aufsetzen | Teamleiterin Vertrieb | Erarbeite einen Vorschlag | 30.10. | 12.10. | 05.10.: Fragebogen-Entwurf angekündigt</mark>
+<mark class="beispiel">Angebote Messestand einholen | Assistenz Geschäftsführung | Arbeite dich ein | 23.10. | 02.10. | 18.09.: Auftrag übergeben, seitdem nichts gehört</mark>
+<mark class="beispiel">Urlaubsplanung Weihnachten | Schichtleiter Produktion | Entscheide mit Rückmeldung | 15.10. | 13.10. | 09.10.: Auftrag per Mail übergeben</mark>
+<mark class="beispiel">Einarbeitungsplan neuer Mitarbeiter | Teamleiter Lager | Erarbeite einen Vorschlag | 31.10. | 19.10. | 06.10.: Gliederung liegt vor</mark>
+<mark class="beispiel">Lieferantenvergleich Verpackung | Einkauf | Erarbeite einen Vorschlag | 02.10. | 02.10. | 15.09.: „ich kümmere mich“; 25.09.: verschoben auf 02.10.; seitdem nichts</mark>
+<mark class="beispiel">Karriereseite überarbeiten | Marketing | Entscheide mit Rückmeldung | 06.11. | 16.10. | 07.10.: erste Texte in Arbeit</mark></pre>
       </div>
-      <p class="mat-tipp"><strong>Kontrolle ist kein Misstrauen, sondern Orientierung.</strong> Die KI ersetzt nicht dein Nachfragen. Sie sorgt dafür, dass du es nicht vergisst und dass es gut klingt.</p>
+
+      <h3>Nach dem Montags-Check</h3>
+      <ol>
+        <li><strong>Anrufen statt mailen.</strong> Fünf Minuten, mit dem Leitfaden der KI. Wer auf die erste Mail nicht reagiert hat, reagiert auf die zweite auch nicht.</li>
+        <li><strong>Neuen Termin vereinbaren</strong>, konkret: was genau, bis wann.</li>
+        <li><strong>Per Mail bestätigen</strong> und in Outlook wieder zur Nachverfolgung kennzeichnen.</li>
+        <li><strong>Liste aktualisieren:</strong> von Hand, eine Minute pro Anruf. Oder mit Prompt 3b.</li>
+        <li><strong>Wer zweimal vertröstet,</strong> bekommt keinen dritten Termin, sondern ein Gespräch: Kann er nicht, will er nicht, oder darf er nicht? Danach enger begleiten, Stufe senken oder neu vergeben.</li>
+      </ol>
+      <p class="merksatz">Wer zweimal vertröstet, bekommt keinen dritten Termin, sondern ein Gespräch.</p>
+
+      <h3>Prompt 3b · Liste aktualisieren</h3>
+      <p>Im selben Chat nach Prompt 3, wenn du die Anrufe geführt hast. Die KI gibt dir die ganze Liste aktualisiert zurück, die kopierst du zurück nach Excel.</p>
+      <p class="legende">Orange markiert = Beispiel. Für dich ersetzt du diese Stellen durch deine eigenen Angaben.</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Prompt 3b · Liste aktualisieren</strong><button type="button" class="kopieren" data-ziel="p-aktualisieren">Kopieren</button></div>
+<pre id="p-aktualisieren">Ich habe die Anrufe geführt. Heute ist <mark class="beispiel">Freitag, der 9. Oktober 2026</mark>.
+Meine Notizen (Beispiel – ersetze sie durch deine eigenen):
+<mark class="beispiel">- Lieferantenvergleich Verpackung: Zwei Angebote fehlten noch, sind jetzt angefordert. Vergleich mit Empfehlung bis 12.10. zugesagt.</mark>
+<mark class="beispiel">- Angebote Messestand einholen: Drei Angebote liegen vor, eins fehlt. Zwischenstand bis 12.10., vollständige Übersicht bis 16.10.</mark>
+
+Gib mir meine Delegationsliste vollständig zurück, als Tabelle mit den Spalten
+Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt | letzter Stand.
+- Trage die neuen Kontrollpunkte und Endtermine ein.
+- Ergänze „letzter Stand“ mit Datum und dem, was vereinbart wurde.
+- Wenn ein Termin verschoben wurde, schreib „verschoben auf …“ dazu und lass die
+  bisherigen Einträge stehen.
+- Alle anderen Zeilen übernimmst du unverändert.
+Keine Einleitung, nur die Tabelle.</pre>
+      </div>
+      <p class="merksatz">Kontrolle ist kein Misstrauen, sondern Orientierung. Die KI ersetzt nicht dein Nachfragen. Sie sorgt dafür, dass du es nicht vergisst und dass es gut klingt.</p>
+      <p class="weiter"><a href="#assistent">→ Noch bequemer: dein eigener Delegations-Assistent, Punkt 9</a></p>
     </section>
 
     <!-- 9 -->
@@ -246,20 +414,35 @@ Meine Liste:
 
 Wenn ich dir eine Aufgabe nenne:
 1. Frag nach, falls es fehlt: an welche Rolle, wie erfahren die Person mit so einer Aufgabe ist, Du oder Sie.
-2. Stell mir die fünf Fragen, die die Person mir wahrscheinlich stellen würde. Sag mir, wo die Aufgabe am ehesten wieder bei mir landen würde, und schlage eine Delegationsstufe vor (Setze um · Arbeite dich ein · Erarbeite einen Vorschlag · Entscheide mit Rückmeldung · Entscheide ohne Rückmeldung). Warte auf meine Antworten.
-3. Schreib dann den Auftrag als E-Mail an die Person: Ziel, Termin, Befugnisse, Ressourcen, Rückmeldung. Klar und freundlich, ohne Floskeln, mit dem Angebot, kurz darüber zu sprechen.
-4. Setze darunter eine Zeile für meine Delegationsliste: Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt
+2. Antworte in einer einzigen Nachricht: die fünf Fragen, die die Person mir wahrscheinlich stellen würde, als nummerierte Liste. In einem Satz, wo die Aufgabe am ehesten wieder bei mir landen würde. In einem Satz, welche Delegationsstufe du vorschlägst (Setze um · Arbeite dich ein · Erarbeite einen Vorschlag · Entscheide mit Rückmeldung · Entscheide ohne Rückmeldung). Dann warte auf meine Antworten.
+3. Schreib dann den Auftrag als kurze E-Mail an die Person, höchstens 150 Wörter, je Punkt eine Zwischenüberschrift: Ziel, Termin, Befugnisse, Ressourcen, Rückmeldung. Klar und freundlich, ohne Floskeln, mit dem Angebot, kurz darüber zu sprechen.
+4. Setze darunter eine Tabelle mit genau einer Zeile für meine Delegationsliste: Aufgabe | Rolle | Stufe | Endtermin | nächster Kontrollpunkt | letzter Stand. In „letzter Stand“ steht: Auftrag übergeben
 5. Erinnere mich in einem Satz daran, die Mail nach dem Senden zur Nachverfolgung zu kennzeichnen, mit Erinnerung am nächsten Kontrollpunkt.
 
 Wenn ich „Montags-Check“ schreibe und meine Liste einfüge:
 - Zeig mir, was überfällig ist und was in den nächsten 7 Tagen ansteht.
 - Zeig mir, wo ich seit über zwei Wochen nichts gehört habe.
-- Formuliere je eine kurze, freundliche Nachfrage: ergebnisorientiert, ohne Misstrauen, mit konkreter Frage.
+- Gib mir für jede überfällige Aufgabe und jede, bei der ich nichts gehört habe, einen kurzen Leitfaden für einen Anruf: Einstieg, Frage, Vereinbarung, Bestätigung per Mail. Freundlich, ohne Vorwurf.
+- Wurde eine Aufgabe schon einmal verschoben, empfiehl den nächsten Schritt: enger begleiten, Delegationsstufe senken oder neu vergeben.
 - Sag mir, wo eine Aufgabe gerade auf dem Weg zurück zu mir ist.
 
 Grundsätze: Arbeite mit Rollen statt Namen. Widersprich mir, wenn ich etwas selbst behalten will, das ich abgeben könnte. Schreib klar und knapp.</pre>
       </div>
       <p class="mat-tipp"><strong>Danach im Alltag:</strong> „Ich will die Kundenbefragung an meine Teamleiterin Vertrieb abgeben“, und los geht’s. Montags: „Montags-Check“ schreiben und die Liste einfügen.</p>
+    </section>
+
+    <!-- Deine Fragen -->
+    <section class="mat-section" id="fragen">
+      <h2>Deine Fragen</h2>
+      <div class="leitfrage">
+        <span class="leitfrage-kicker">Frage an dich</span>
+        <p>Was hält dich im Alltag am meisten davon ab, mehr abzugeben?</p>
+      </div>
+      <p>Schreib deine Frage in den Chat oder melde dich. Was wir heute nicht schaffen, beantworte ich im Workbook.</p>
+      <div class="leitfrage">
+        <span class="leitfrage-kicker">Zum Schluss</span>
+        <p>Was nimmst du heute mit? Ein Satz in den Chat reicht.</p>
+      </div>
     </section>
 
     <!-- 10 -->
@@ -279,10 +462,12 @@ Grundsätze: Arbeite mit Rollen statt Namen. Widersprich mir, wenn ich etwas sel
     <section class="mat-section" id="weiter">
       <h2><span class="mat-nr">11</span>Wie es weitergeht</h2>
       <ul>
+        <li><strong>Deine Hausaufgabe, freiwillig:</strong> Leg heute noch deine Delegationsliste an. Nur die offenen Aufgaben, fünf Minuten. Am Montag machst du den ersten Check.</li>
         <li><strong>Workbook:</strong> Alle Angemeldeten bekommen in den nächsten Tagen das Workbook mit allen Inhalten dieser Seite und den Antworten auf die Fragen aus der Runde.</li>
         <li><strong>Nächster KI-Talk:</strong> Freitag, 13. November 2026, 8:30 bis 9:30 Uhr · <strong>Meetings, die etwas ergeben.</strong> <a href="https://ki-talk.trust-unternehmer.de/#anmeldung">Anmelden</a></li>
         <li><strong>Weitersagen:</strong> Wenn du jemanden kennst, dem das helfen würde, zum Beispiel deine eigenen Führungskräfte: Schick ihnen den Link zur <a href="https://ki-talk.trust-unternehmer.de">KI-Talk-Seite</a>.</li>
       </ul>
+      <p class="merksatz">Delegieren scheitert selten am Willen, sondern an den 20 Minuten Denkarbeit und am Nachhalten. Beides macht dir die KI leichter.</p>
     </section>
 
   </main>
@@ -369,6 +554,20 @@ Grundsätze: Arbeite mit Rollen statt Namen. Widersprich mir, wenn ich etwas sel
       kopieren(this, text);
     });
   }
+
+  /* Druck: Textfassungen neben Grafiken ausklappen, danach wie vorher */
+  var geoeffnet = [];
+  window.addEventListener('beforeprint', function () {
+    var felder = document.querySelectorAll('details.alstext');
+    geoeffnet = [];
+    for (var d = 0; d < felder.length; d++) {
+      if (!felder[d].open) { felder[d].open = true; geoeffnet.push(felder[d]); }
+    }
+  });
+  window.addEventListener('afterprint', function () {
+    for (var d = 0; d < geoeffnet.length; d++) { geoeffnet[d].open = false; }
+    geoeffnet = [];
+  });
 })();
 </script>
 
