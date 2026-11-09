@@ -1,0 +1,8 @@
+name = "ki-talk-stufe"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+# ID kommt aus: wrangler kv namespace create STUFEN
+[[kv_namespaces]]
+binding = "STUFEN"
+id = "3c7976ec923c41898c408c6ba144c632"

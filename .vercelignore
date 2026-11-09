@@ -1,2 +1,5 @@
 # Siehe Kommentar im Website-Repo: was im Repo liegt, ist im Web abrufbar.
 *.md
+
+# Stufen-Worker: Quellcode nicht unter der Domain ausliefern
+stufe-worker/

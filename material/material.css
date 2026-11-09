@@ -410,3 +410,80 @@ details.alstext summary {
   details.alstext summary { display: none; }
   .weiter { display: none; }
 }
+
+/* ---------- Schrittweise Freischaltung (ab November 2026) ----------
+   Die Seite setzt .stufen-aktiv auf <html>. Dann ist jedes Element mit
+   data-stufe verborgen, bis das Skript ihm .frei gibt. Ohne JavaScript
+   und beim Drucken ist alles sichtbar. */
+
+.stufen-aktiv [data-stufe]:not(.frei) { display: none !important; }
+
+.stufe-neu {
+  position: fixed;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  z-index: 50;
+  max-width: calc(100% - 2rem);
+}
+.stufe-neu[hidden] { display: none; }
+.stufe-neu button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-size: 1.15rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+.stufe-neu button:hover { background: var(--color-orange-dark); }
+
+.mod-leiste {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-md);
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  box-shadow: var(--shadow-soft);
+  max-width: calc(100% - 2rem);
+}
+.mod-leiste button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  background: var(--color-white);
+  color: var(--color-navy);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.mod-leiste .ml-weiter { background: var(--color-orange); color: var(--color-white); }
+.mod-leiste .ml-stand { font-weight: 700; }
+.mod-leiste .ml-meldung { color: #c9d4e3; font-size: 0.9rem; }
+.mod-leiste input {
+  width: 8rem;
+  padding: 0.3rem 0.5rem;
+  border: 0;
+  border-radius: 6px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+}
+.mod-leiste [hidden] { display: none; }
+
+@media print {
+  .stufen-aktiv [data-stufe]:not(.frei) { display: block !important; }
+  .stufe-neu, .mod-leiste { display: none !important; }
+}

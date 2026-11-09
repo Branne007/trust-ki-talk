@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!--
+  ============================================================
+  TRUST KI-Talk · Materialseite November 2026
+  Vorlage: material/2026-10/index.html
+  NEU: schrittweise Freischaltung. Jeder Abschnitt trägt
+  data-stufe="n". Teilnehmer sehen alles bis zur aktuellen
+  Stufe, die der Stufen-Worker liefert (stufe-worker/).
+  Moderator:  ?moderator   → Steuerleiste unten rechts
+  Alles zeigen: ?alles     → z. B. für Workbook und Probelauf
+  Ohne JavaScript, beim Drucken und wenn der Worker beim Laden
+  nicht antwortet, ist alles sichtbar.
+  Nach dem Talk: Stufe auf 99 setzen, dann ist alles offen.
+  Keine Uhrzeiten auf dieser Seite (Entscheidung 09.11.2026).
+  ============================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material · Meetings, die etwas ergeben · TRUST KI-Talk</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../material.css">
+<link rel="icon" href="../../bilder/TRUST-Signet-512px.png">
+<script>
+/* Sofort beim Laden: Sperre aktivieren, bevor etwas sichtbar wird
+   (außer bei ?alles). Fällt das Skript unten aus, hebt ein Zeitlimit
+   die Sperre wieder auf. */
+(function () {
+  if (!/[?&]alles\b/.test(window.location.search)) {
+    document.documentElement.className += ' stufen-aktiv';
+  }
+})();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#inhalt">Direkt zum Inhalt</a>
+
+<header class="site-header mat-header">
+  <div class="container header-inner">
+    <a class="brand-logo" href="https://ki-talk.trust-unternehmer.de">
+      <img src="../../bilder/TRUST-Hauptlogo-horizontal.svg" alt="TRUST Unternehmer. Nicht allein.">
+    </a>
+  </div>
+</header>
+
+<section class="mat-hero">
+  <div class="container">
+    <span class="kicker">TRUST KI-Talk · Material</span>
+    <h1>Meetings, die etwas ergeben</h1>
+    <p class="mat-datum">Freitag, 13. November 2026 · mit Thomas Brandenburger</p>
+    <p class="mat-intro">Mit KI vorbereiten, protokollieren und nachhalten. Die Abschnitte erscheinen nacheinander, so wie wir sie im Talk durchgehen. Danach steht hier alles: die Prompts zum Kopieren, das Beispiel und die Quellen. Die Seite bleibt online.</p>
+  </div>
+</section>
+
+<div class="container mat-layout">
+
+  <nav class="mat-toc" aria-label="Inhalt dieser Seite">
+    <h2>Inhalt</h2>
+    <ol>
+      <li data-stufe="0"><a href="#start"><span></span>So läuft die Stunde</a></li>
+      <li data-stufe="1"><a href="#kosten"><span>1</span>Was Meetings kosten</a></li>
+      <li data-stufe="2"><a href="#vorbereiten"><span>2</span>Vorbereiten: der Jour fixe</a></li>
+      <li data-stufe="3"><a href="#durchfuehren"><span>3</span>Durchführen</a></li>
+      <li data-stufe="4"><a href="#protokoll"><span>4</span>Prompt des Monats: das Protokoll</a></li>
+      <li data-stufe="5"><a href="#nachhalten"><span>5</span>Nachhalten</a></li>
+      <li data-stufe="6"><a href="#fragen"><span></span>Deine Fragen</a></li>
+      <li data-stufe="7"><a href="#assistent"><span>6</span>Bonus: Meeting-Assistent</a></li>
+      <li data-stufe="7"><a href="#quellen"><span>7</span>Quellen</a></li>
+      <li data-stufe="7"><a href="#weiter"><span>8</span>Wie es weitergeht</a></li>
+    </ol>
+  </nav>
+
+  <main id="inhalt" class="mat-content">
+
+    <!-- Stufe 0 · Start -->
+    <section class="mat-section" id="start" data-stufe="0">
+      <h2>So läuft die Stunde</h2>
+      <div class="mat-ablauf">
+        <p><strong>Heute:</strong> was Meetings kosten · wie du deinen Jour fixe vorbereitest · wie aus dem Gespräch ein Protokoll wird · wie du nachhältst · deine Fragen.</p>
+        <p><strong>So machst du mit:</strong> Öffne dein KI-Werkzeug. <strong>Jeden Prompt schickst du in einem neuen Chat ab</strong>, nur Prompt 3 gehört in denselben Chat wie Prompt 2. Wer kein KI-Werkzeug hat, schaut einfach zu.</p>
+      </div>
+      <div class="mat-hinweis">
+        <p><strong>Bevor du etwas in ein KI-Werkzeug eingibst:</strong> Rollen statt Namen („Leiter Vertrieb“, nicht „Herr Müller“). Keine vertraulichen Details, keine Kundendaten. Wenn dein Betrieb ein KI-Werkzeug freigegeben hat, nimm das.</p>
+      </div>
+      <div class="leitfrage">
+        <span class="leitfrage-kicker">Zum Einstieg in den Chat</span>
+        <p>Wer bist du, aus welchem Betrieb, und wie viele Stunden pro Woche sitzt du in Besprechungen?</p>
+      </div>
+    </section>
+
+    <!-- Stufe 1 · Kosten -->
+    <section class="mat-section" id="kosten" data-stufe="1">
+      <h2><span class="mat-nr">1</span>Was Meetings kosten, und ob es sie braucht</h2>
+      <figure class="folie"><img src="img/01-meetingkosten.png" alt="Zwei Kennzahlen: 500 bis 1.000 Euro pro Stunde, wenn mehrere Mitarbeiter oder Führungskräfte zusammensitzen, ein Führungsmeeting alle zwei Wochen kostet 40.000 bis 50.000 Euro im Jahr. 16,5 Stunden pro Monat sitzen Büroangestellte in Deutschland in Meetings, die Mehrheit empfindet sie als ineffektiv (Sharp 2018)." width="1600" height="900" loading="lazy"></figure>
+      <p>Sitzen mehrere Mitarbeiter zusammen, kostet die Stunde schnell 500 €, mit Führungskräften bis 1.000 €. Ein festes Führungsmeeting alle zwei Wochen kommt so auf 40.000 bis 50.000 € im Jahr. Führungskräfte der oberen Ebene sitzen laut Harvard Business Review fast 23 Stunden pro Woche in Meetings.</p>
+
+      <h3>Erste Frage: Braucht es dieses Meeting?</h3>
+      <p>Soll etwas <strong>entschieden</strong> werden, oder geht es nur um <strong>Information</strong>? Information geht auch per Mail, Rückfragen dazu passen in fünf Minuten am Rand einer anderen Runde.</p>
+      <p>Und: Welche Art Meeting ist es? Wer alles in eine Runde packt, bespricht Strategisches zwischen Tür und Angel und Kleinkram in der Klausur.</p>
+      <div class="mat-tabelle">
+        <table>
+          <thead>
+            <tr><th>Meeting</th><th>Rhythmus</th><th>Wofür</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Kurzabgleich</strong></td><td>täglich, höchstens 5 Minuten</td><td>Wer ist da, was steht heute an</td></tr>
+            <tr><td><strong>Jour fixe</strong></td><td>wöchentlich, unter einer Stunde</td><td>Stand der Dinge, offene Punkte, kurze Entscheidungen</td></tr>
+            <tr><td><strong>Strategierunde</strong></td><td>monatlich, 2 bis 4 Stunden</td><td>Ein bis zwei große Themen in der Tiefe, Reibung erwünscht</td></tr>
+            <tr><td><strong>Klausur</strong></td><td>vierteljährlich, ganztägig, außer Haus</td><td>Richtung, Team, Markt, Kunden</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mat-quelle">Nach Patrick Lencioni, „Death by Meeting“.</p>
+      <p class="mat-tipp"><strong>Gut zu wissen:</strong> Shopify hat 2023 alle wiederkehrenden Termine mit drei und mehr Personen aus den Kalendern gelöscht. Neu eintragen durfte man erst nach zwei Wochen. Ergebnis laut Unternehmen: 322.000 Stunden weniger Meetings im Jahr.</p>
+      <div class="leitfrage">
+        <span class="leitfrage-kicker">Frage an dich</span>
+        <p>Welches deiner festen Meetings würdest du heute nicht mehr neu einführen?</p>
+      </div>
+      <p class="merksatz">Das beste Meeting ist das, das nicht stattfinden muss. Das zweitbeste endet mit klaren Aufgaben.</p>
+    </section>
+
+    <!-- Stufe 2 · Vorbereiten -->
+    <section class="mat-section" id="vorbereiten" data-stufe="2">
+      <h2><span class="mat-nr">2</span>Vorbereiten: der Jour fixe als Kreislauf</h2>
+      <p>Das wichtigste Meeting in vielen Betrieben ist der Jour fixe: der Geschäftsführer mit den Leitern der Bereiche, jede Woche zur selben Zeit. Er lebt davon, dass er an die letzte Runde anknüpft.</p>
+      <figure class="folie"><img src="img/02-jour-fixe-kreislauf.png" alt="Kreislauf in vier Schritten: Tagesordnung aus dem letzten Protokoll und neuen Punkten (Prompt 1), Jour fixe mit offenen Punkten zuerst und Zusammenfassung am Ende, Protokoll mit KI inklusive der offen gebliebenen Punkte (Prompt 2), Nachfassen mit Protokollmail und Liste offener Punkte (Prompt 3). Die offenen Punkte sind Punkt 1 der nächsten Runde." width="1600" height="900" loading="lazy"></figure>
+
+      <h3>Eine Tagesordnung allein reicht nicht</h3>
+      <p>Das sagt Steven Rogelberg, der am meisten zu Meetings geforscht hat. Es kommt darauf an, was je Punkt feststeht:</p>
+      <ol class="schritte">
+        <li><strong>Die Frage, die am Ende beantwortet sein soll.</strong> Nicht „Messe“, sondern „Gehen wir im März wieder hin?“</li>
+        <li><strong>Der Verantwortliche.</strong> Wer den Punkt einbringt, bereitet ihn vor. Nicht automatisch der Chef.</li>
+        <li><strong>Die Zeit.</strong> Kürzer planen, als man schätzt. Die letzten fünf Minuten gehören der Zusammenfassung.</li>
+        <li><strong>Die Vorbereitung.</strong> Bei Entscheidungen bringt der Verantwortliche eine Seite mit: Ausgangslage, Optionen, Vorschlag.</li>
+      </ol>
+      <p><em>Erinnerst du dich an den Oktober? Wer einen Punkt vorbereitet, hat einen Auftrag auf Stufe 3: „Erarbeite einen Vorschlag.“ Der Affe bleibt beim Mitarbeiter.</em></p>
+
+      <h3>Prompt 1: Die Tagesordnung für deinen Jour fixe</h3>
+      <p>Aus dem Protokoll der letzten Sitzung und deinen neuen Punkten wird die Tagesordnung, dazu ein Vorbereitungsauftrag für jeden Verantwortlichen. Deine neuen Punkte kannst du auch einsprechen, wenn dein Werkzeug eine Spracheingabe hat.</p>
+      <p class="legende">Orange markiert = Beispiel. Für dich ersetzt du diese Stellen durch deine eigenen Angaben.</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Prompt 1 · Die Tagesordnung</strong><button type="button" class="kopieren" data-ziel="p-tagesordnung">Kopieren</button></div>
+<pre id="p-tagesordnung">Ich bereite unseren <mark class="beispiel">wöchentlichen Jour fixe</mark> vor: <mark class="beispiel">Geschäftsführer mit den Leitern
+Vertrieb, Produktion und Einkauf, Montag, 9. November 2026, 8:00 Uhr, höchstens 45 Minuten</mark>.
+Heute ist <mark class="beispiel">Mittwoch, der 4. November 2026</mark>.
+Unten stehen das Protokoll der letzten Sitzung und meine neuen Punkte.
+
+Erstelle daraus:
+
+1. Die Tagesordnung als Tabelle mit den Spalten:
+   Nr. | Punkt | Frage, die am Ende beantwortet sein soll | Verantwortlich | Minuten | Vorbereitung
+   - Punkt 1 heißt immer „Offene Punkte aus der letzten Sitzung“. Führe darunter jede
+     Aufgabe aus dem Protokoll einzeln auf, mit der Frage „Erledigt oder neuer Termin?“
+   - Danach die neuen Punkte, der wichtigste zuerst.
+   - Verantwortlich ist, wer den Punkt einbringt und vorbereitet, nicht automatisch ich.
+   - Die Minuten reichen bis höchstens 40, die letzten 5 Minuten sind für die
+     Zusammenfassung reserviert.
+2. Für jeden Verantwortlichen einen Vorbereitungsauftrag in höchstens zwei Sätzen: was er
+   mitbringt und bis wann. Bei Entscheidungen: eine Seite mit Ausgangslage, Optionen, Vorschlag.
+3. Ein Satz: Welcher Punkt braucht kein Meeting und kann per Mail erledigt werden?
+4. Ein Satz: Welche Aufgabe aus dem Protokoll wurde schon einmal verschoben, und was
+   schlägst du vor?
+
+Antworte kompakt, ohne Einleitung. Rollen statt Namen.
+
+Protokoll der letzten Sitzung (Beispiel – ersetze es durch dein eigenes):
+<mark class="beispiel">Meetingprotokoll · Jour fixe Leitungskreis</mark>
+<mark class="beispiel">Datum: Montag, 2. November 2026 · Nächster Termin: Montag, 9. November 2026</mark>
+<mark class="beispiel">Teilnehmer: Geschäftsführer, Vertrieb, Produktion, Einkauf</mark>
+<mark class="beispiel">A = Aufgabe · S = Statement · E = Entscheidung</mark>
+<mark class="beispiel">Pos. | A/S/E | Was? | Wer? | Bis wann?</mark>
+<mark class="beispiel">1 | S | Großauftrag 800 Gehäuse eingegangen, Kunde wünscht Lieferung KW 48 | Vertrieb | –</mark>
+<mark class="beispiel">2 | A | Prüfen, ob KW 48 machbar ist, Rückmeldung an Vertrieb | Produktion | 06.11.</mark>
+<mark class="beispiel">3 | E | Wartung Laserschneidanlage in KW 45 wie geplant | Geschäftsführer | –</mark>
+<mark class="beispiel">4 | A | Angebot Wartungsvertrag Kompressor einholen (verschoben vom 23.10.) | Einkauf | 06.11.</mark>
+<mark class="beispiel">5 | A | Fragebogen Kundenbefragung Top-30 entwerfen | Vertrieb | 09.11.</mark>
+
+Meine neuen Punkte (Beispiel – ersetze sie durch deine eigenen, gern per Spracheingabe):
+<mark class="beispiel">- Der Verpackungslieferant will ab Januar 8 % mehr.</mark>
+<mark class="beispiel">- Messe im März: Gehen wir wieder hin? Der Stand hat letztes Mal knapp 20.000 € gekostet.</mark>
+<mark class="beispiel">- Weihnachtsfeier: Organisation liegt bei der Assistenz, nur zur Info.</mark></pre>
+      </div>
+      <p class="mat-tipp"><strong>Tipp:</strong> Schick die Tagesordnung mit den Vorbereitungsaufträgen zwei, drei Tage vorher raus. Wer seinen Punkt nicht vorbereitet hat, bekommt ihn nicht auf die Tagesordnung, sondern auf die nächste.</p>
+      <details class="alstext">
+        <summary>Checkliste: Ist mein Meeting vorbereitet?</summary>
+        <ul>
+          <li>Ist klar, was am Ende entschieden oder geklärt sein soll?</li>
+          <li>Gibt es eine Tagesordnung mit Fragen, Verantwortlichen und Zeiten?</li>
+          <li>Sitzen nur die am Tisch, die etwas beitragen oder betroffen sind?</li>
+          <li>Wissen alle, was sie mitbringen sollen?</li>
+          <li>Wer moderiert, wer achtet auf die Zeit, wer schreibt das Protokoll?</li>
+        </ul>
+      </details>
+      <p class="merksatz">Wer einen Punkt einbringt, bereitet ihn vor.</p>
+    </section>
+
+    <!-- Stufe 3 · Durchführen -->
+    <section class="mat-section" id="durchfuehren" data-stufe="3">
+      <h2><span class="mat-nr">3</span>Durchführen</h2>
+      <h3>Drei Rollen, nicht alle beim Chef</h3>
+      <ul>
+        <li><strong>Moderator:</strong> hält die Tagesordnung, sorgt dafür, dass alle zu Wort kommen. Einzelne Punkte können die Verantwortlichen selbst leiten.</li>
+        <li><strong>Zeitwächter:</strong> sagt an, wenn die Zeit für einen Punkt um ist. Ist der Punkt nicht entscheidungsreif: Wer bringt bis wann, was fehlt?</li>
+        <li><strong>Protokollführer:</strong> hält je Punkt fest, was zu tun ist, wer es macht und bis wann. Oder er sorgt für die Aufnahme, aus der die KI das Protokoll macht.</li>
+      </ul>
+      <p>Am Ende fasst der Moderator zusammen: Was ist entschieden, wer macht was bis wann? Diese fünf Minuten fehlen in den meisten Meetings.</p>
+
+      <h3>Drei Wege zum Protokoll</h3>
+      <figure class="folie"><img src="img/03-drei-wege-protokoll.png" alt="Drei Wege zum Protokoll: Teams-Meeting mit Transkription, danach das Transkript als Word-Datei an die KI. Besprechung vor Ort mit angesagter Tonaufnahme per Smartphone, die Tondatei direkt in die KI. Ohne Aufnahme: Stichpunkte mitschreiben oder direkt danach einsprechen. Immer: Aufnahme ansagen, Zweck nennen, Ton nach dem Protokoll löschen, freigegebenes Werkzeug, Betriebsrat einbinden." width="1600" height="900" loading="lazy"></figure>
+      <p class="mat-tipp"><strong>Werkzeuge:</strong> In Teams lässt sich die Transkription ohne Zusatzlizenz einschalten, wenn die IT sie freigegeben hat. Das Transkript lädst du danach als Word-Datei herunter. Die automatische Zusammenfassung in Teams gibt es mit Copilot oder Teams Premium. Langdock nimmt Tondateien bis 200 MB direkt im Chat an und schreibt sie selbst ab.</p>
+
+      <div class="mat-hinweis">
+        <p><strong>Aufnehmen und abschreiben lassen: was du beachten musst.</strong> Auch eine reine Transkription zeichnet technisch den Ton auf. Wer das nichtöffentlich gesprochene Wort ohne Einverständnis aufnimmt, macht sich strafbar (§ 201 StGB). Deshalb: <strong>vorher ansagen, Zweck nennen, nach dem Protokoll den Ton löschen</strong>, nur ein freigegebenes Werkzeug nutzen. Gibt es einen Betriebsrat, binde ihn ein, bevor im Betrieb Aufzeichnungswerkzeuge eingesetzt werden. Im Zweifel: Stichpunkte statt Aufnahme. Das ist keine Rechtsberatung.</p>
+      </div>
+      <p class="merksatz">Es zählt das Protokoll, nicht die Aufnahme.</p>
+    </section>
+
+    <!-- Stufe 4 · Prompt des Monats -->
+    <section class="mat-section mat-highlight" id="protokoll" data-stufe="4">
+      <span class="mat-label">Prompt des Monats</span>
+      <h2><span class="mat-nr">4</span>Aus dem Gespräch wird ein Protokoll</h2>
+      <p>Unten steht das Gespräch aus dem Jour fixe vom 9. November, für den wir eben die Tagesordnung gebaut haben. Die KI macht daraus ein Protokoll im Format <strong>A/S/E</strong>: Aufgabe, Statement, Entscheidung, jeweils mit Wer und Bis wann. Und sie zeigt dir, <strong>was offen geblieben ist</strong>.</p>
+      <p class="legende">Orange markiert = Beispiel. Für dich ersetzt du diese Stellen durch deine eigenen Angaben.</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Prompt 2 · Vom Gespräch zum Protokoll</strong><button type="button" class="kopieren" data-ziel="p-protokoll">Kopieren</button></div>
+<pre id="p-protokoll">Unten steht das Transkript unseres Jour fixe vom <mark class="beispiel">Montag, 9. November 2026</mark>.
+Teilnehmer: <mark class="beispiel">Geschäftsführer, Vertrieb, Produktion</mark>. Abwesend: <mark class="beispiel">Einkauf</mark>.
+Nächster Termin: <mark class="beispiel">Montag, 16. November 2026</mark>.
+
+Erstelle das Protokoll, genau so:
+
+1. Kopf: Bezeichnung, Datum, Teilnehmer, abwesend, nächster Termin.
+2. Eine Tabelle mit den Spalten: Pos. | A/S/E | Was? | Wer? | Bis wann?
+   A = Aufgabe, S = Statement (wichtige Information), E = Entscheidung.
+   - Jede Aufgabe bekommt eine Rolle und ein Datum. Fehlt eines davon im Gespräch,
+     schreib „offen“. Erfinde nichts.
+   - Rechne Angaben wie „Mittwoch“ oder „diese Woche“ in ein Datum um.
+   - Lass Organisatorisches zur Sitzung, Abschweifungen und Smalltalk weg.
+   - Höchstens eine Zeile je Position.
+3. Darunter „Was offen geblieben ist“, als kurze Liste:
+   - Aufgaben ohne Verantwortlichen oder ohne Termin
+   - Widersprüche, die nicht aufgelöst wurden
+   - Aufgaben an Personen, die nicht dabei waren
+   - Vertagte Punkte, für die niemand etwas vorbereitet
+   - Aufgaben, die schon einmal verschoben wurden
+4. Ein Satz: Was sollte ich als Leiter der Runde beim nächsten Mal anders machen?
+
+Rollen statt Namen. Keine Einleitung.
+
+Transkript (Beispiel – ersetze es durch dein eigenes):
+<mark class="beispiel">Geschäftsführer: Guten Morgen zusammen. Kurz vorweg: Ich nehme die Runde heute auf, damit ich hinterher das Protokoll machen kann. Die Aufnahme lösche ich danach wieder. Ist das für euch in Ordnung?</mark>
+<mark class="beispiel">Vertrieb: Ja, klar.</mark>
+<mark class="beispiel">Produktion: Passt.</mark>
+<mark class="beispiel">Geschäftsführer: Gut. Der Einkauf ist heute nicht da, Urlaub. Wir fangen wie immer mit den offenen Punkten von letzter Woche an. Fragebogen für die Kundenbefragung?</mark>
+<mark class="beispiel">Vertrieb: Ist fertig. Schick ich euch heute noch rum.</mark>
+<mark class="beispiel">Geschäftsführer: Sehr gut. Dann die Frage, ob wir die 800 Gehäuse bis KW 48 schaffen.</mark>
+<mark class="beispiel">Produktion: Hab ich geprüft. Die Laserschneidanlage stand ja letzte Woche zwei Tage für die Wartung. Realistisch schaffen wir es bis Ende KW 49.</mark>
+<mark class="beispiel">Vertrieb: KW 49? Ich hab dem Kunden am Freitag KW 48 bestätigt. Ich hab nichts anderes von dir gehört.</mark>
+<mark class="beispiel">Produktion: Ich hab doch gesagt, ich prüf das erst.</mark>
+<mark class="beispiel">Geschäftsführer: Okay. Was brauchst du, damit es KW 48 wird?</mark>
+<mark class="beispiel">Produktion: Eine Samstagsschicht, mindestens eine. Besser zwei.</mark>
+<mark class="beispiel">Geschäftsführer: Eine Samstagsschicht genehmige ich. Über die zweite reden wir, wenn wir sehen, wie weit wir kommen. Machst du mir bis Mittwoch einen Kapazitätsplan, damit ich sehe, ob das reicht?</mark>
+<mark class="beispiel">Produktion: Bis Mittwoch, ja.</mark>
+<mark class="beispiel">Vertrieb: Und was sag ich dem Kunden jetzt?</mark>
+<mark class="beispiel">Geschäftsführer: Ja … da müsste mal jemand anrufen und ihn vorwarnen, dass es knapp wird. Am besten diese Woche noch.</mark>
+<mark class="beispiel">Vertrieb: Hm.</mark>
+<mark class="beispiel">Geschäftsführer: Dann das Angebot für den Wartungsvertrag vom Kompressor. Das ist jetzt schon zum zweiten Mal über der Zeit. Und der Einkauf ist nicht da.</mark>
+<mark class="beispiel">Produktion: Der Kompressor macht wieder Geräusche, nur so nebenbei.</mark>
+<mark class="beispiel">Geschäftsführer: Na ja. Nehmen wir mit. Neue Themen: Der Verpackungslieferant will ab Januar acht Prozent mehr.</mark>
+<mark class="beispiel">Vertrieb: Acht Prozent? Das ist schon heftig.</mark>
+<mark class="beispiel">Produktion: Wir hatten doch letztes Jahr schon mal ein anderes Angebot, von dem Lieferanten aus Wetzlar.</mark>
+<mark class="beispiel">Geschäftsführer: Stimmt. Das klären wir dann mit dem Einkauf, wenn er wieder da ist.</mark>
+<mark class="beispiel">Vertrieb: Apropos: Ist eigentlich klar, wo die Weihnachtsfeier ist? Letztes Jahr war das mit dem Parkplatz ja eine Katastrophe.</mark>
+<mark class="beispiel">Produktion: (lacht) Ja, die Hälfte hat in der Seitenstraße geparkt.</mark>
+<mark class="beispiel">Geschäftsführer: Das macht dieses Jahr die Assistenz, da kümmere ich mich nicht drum. Letzter Punkt, die Messe im März. Du wolltest uns eine Seite mitbringen, was die letzte Messe gebracht hat.</mark>
+<mark class="beispiel">Vertrieb: Ja … bin ich noch nicht zu gekommen. Aber aus dem Bauch: Wir haben da drei Neukunden rausgeholt.</mark>
+<mark class="beispiel">Produktion: Drei Neukunden für 20.000 Euro Standkosten? Weiß ich nicht.</mark>
+<mark class="beispiel">Geschäftsführer: Ohne Zahlen bringt das nichts. Das machen wir nächste Woche.</mark>
+<mark class="beispiel">Vertrieb: Okay.</mark>
+<mark class="beispiel">Geschäftsführer: Sonst noch was? … Nein? Gut, dann machen wir Schluss, ich muss gleich in den nächsten Termin.</mark></pre>
+      </div>
+
+      <h3>Mit deiner eigenen Aufnahme</h3>
+      <p>Hast du eine Tondatei oder ein Teams-Transkript als Datei, lade sie im Chat hoch und schick diesen Prompt dazu. Kann dein Werkzeug keine Tondateien, nimm das Transkript.</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Prompt 2b · Mit Tondatei oder Transkript-Datei</strong><button type="button" class="kopieren" data-ziel="p-protokoll-datei">Kopieren</button></div>
+<pre id="p-protokoll-datei">Ich habe die Aufnahme unseres <span class="ph">[Name der Runde]</span> vom <span class="ph">[Datum]</span> hochgeladen.
+Teilnehmer: <span class="ph">[Rollen]</span>. Abwesend: <span class="ph">[Rollen]</span>. Nächster Termin: <span class="ph">[Datum]</span>.
+
+Erstelle das Protokoll, genau so:
+
+1. Kopf: Bezeichnung, Datum, Teilnehmer, abwesend, nächster Termin.
+2. Eine Tabelle mit den Spalten: Pos. | A/S/E | Was? | Wer? | Bis wann?
+   A = Aufgabe, S = Statement (wichtige Information), E = Entscheidung.
+   - Jede Aufgabe bekommt eine Rolle und ein Datum. Fehlt eines davon im Gespräch,
+     schreib „offen“. Erfinde nichts.
+   - Rechne Angaben wie „Mittwoch“ oder „diese Woche“ in ein Datum um.
+   - Lass Organisatorisches zur Sitzung, Abschweifungen und Smalltalk weg.
+   - Höchstens eine Zeile je Position.
+3. Darunter „Was offen geblieben ist“, als kurze Liste:
+   - Aufgaben ohne Verantwortlichen oder ohne Termin
+   - Widersprüche, die nicht aufgelöst wurden
+   - Aufgaben an Personen, die nicht dabei waren
+   - Vertagte Punkte, für die niemand etwas vorbereitet
+   - Aufgaben, die schon einmal verschoben wurden
+4. Ein Satz: Was sollte ich als Leiter der Runde beim nächsten Mal anders machen?
+
+Rollen statt Namen. Keine Einleitung.</pre>
+      </div>
+      <p class="mat-tipp"><strong>Tipp:</strong> Prüf das Protokoll, bevor es rausgeht. Die KI hört nicht immer richtig, und was nicht gesagt wurde, steht als „offen“ da. Genau das ist gewollt.</p>
+      <div class="leitfrage">
+        <span class="leitfrage-kicker">Frage an dich</span>
+        <p>Was hat deine KI unter „Was offen geblieben ist“ gefunden? Schreib einen Punkt in den Chat.</p>
+      </div>
+      <p class="merksatz">Die KI zeigt dir, was im Meeting nicht entschieden wurde.</p>
+    </section>
+
+    <!-- Stufe 5 · Nachhalten -->
+    <section class="mat-section" id="nachhalten" data-stufe="5">
+      <h2><span class="mat-nr">5</span>Nachhalten</h2>
+      <ul>
+        <li><strong>Das Protokoll geht am selben Tag raus,</strong> an alle, auch an die, die gefehlt haben.</li>
+        <li><strong>Rückmeldung ist Bringschuld.</strong> Wer eine Aufgabe hat, meldet sich, wenn sie erledigt ist oder sich verschiebt. Das vereinbarst du einmal mit allen.</li>
+        <li><strong>Die offenen Punkte sind Punkt 1 der nächsten Runde.</strong> Damit schließt sich der Kreis zu Prompt 1.</li>
+      </ul>
+      <p>Aufgaben aus dem Jour fixe, die du selbst vergeben hast, gehören außerdem in deine Delegationsliste aus dem Oktober. Der <a href="../2026-10/#montags-check">Montags-Check</a> hält sie nach.</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Prompt 3 · Protokollmail und offene Punkte</strong><button type="button" class="kopieren" data-ziel="p-nachfassen">Kopieren</button></div>
+<pre id="p-nachfassen">Mach daraus zwei Dinge:
+
+1. Eine E-Mail an alle Teilnehmer, auch an die, die gefehlt haben. Betreff, höchstens
+   drei Sätze, dann das Protokoll als Tabelle. Bitte darum, dass jeder, der eine Aufgabe
+   ohne Termin hat, bis <mark class="beispiel">Mittwoch, 11. November</mark> einen Termin nennt, und dass offene Punkte
+   ohne Verantwortlichen bis dahin vergeben werden. Du-Form, freundlich, ohne Floskeln.
+2. Die Liste der offenen Aufgaben als Tabelle: Aufgabe | Wer | Bis wann | Stand.
+   Sie wird Punkt 1 der Tagesordnung am <mark class="beispiel">16. November</mark>.</pre>
+      </div>
+      <p class="mat-tipp"><strong>Wichtig:</strong> Prompt 3 schickst du im <strong>selben Chat</strong> ab wie Prompt 2, denn er baut auf dem Protokoll auf.</p>
+      <p class="merksatz">Ein Meeting ist erst vorbei, wenn klar ist, wer was bis wann macht.</p>
+    </section>
+
+    <!-- Stufe 6 · Fragen -->
+    <section class="mat-section" id="fragen" data-stufe="6">
+      <h2>Deine Fragen</h2>
+      <div class="leitfrage">
+        <span class="leitfrage-kicker">Frage an dich</span>
+        <p>Was ist in deinen Meetings der größte Zeitfresser?</p>
+      </div>
+      <p>Schreib deine Frage in den Chat oder melde dich. Was wir heute nicht schaffen, beantworte ich im Workbook.</p>
+    </section>
+
+    <!-- Stufe 7 · Bonus -->
+    <section class="mat-section" id="assistent" data-stufe="7">
+      <span class="mat-label">Bonus</span>
+      <h2><span class="mat-nr">6</span>Dein Meeting-Assistent</h2>
+      <p>Wer es noch bequemer will, richtet sich einmal einen eigenen Assistenten ein. Dann kopierst du keine Prompts mehr, sondern schreibst nur ein Stichwort und fügst das Material ein: <strong>„Tagesordnung“</strong>, <strong>„Protokoll“</strong> oder <strong>„Nachfassen“</strong>.</p>
+      <p><strong>So geht’s:</strong> Die Anleitung unten kopieren und in das Feld für Anweisungen deines Werkzeugs einfügen, zum Beispiel bei einem Agenten in Langdock, einem eigenen GPT in ChatGPT, einem Projekt in Claude oder einem Agenten in Microsoft Copilot. Diese Funktionen gibt es meist nur in den bezahlten Versionen. Im Betrieb nimm das Werkzeug, das freigegeben ist.</p>
+      <div class="prompt">
+        <div class="prompt-kopf"><strong>Anleitung · Meeting-Assistent</strong><button type="button" class="kopieren" data-ziel="p-assistent">Kopieren</button></div>
+<pre id="p-assistent">Du bist mein Meeting-Assistent für unseren <span class="ph">[wöchentlichen Jour fixe]</span> (Geschäftsführer mit
+den Bereichsleitern). Ich leite die Runde, du bereitest vor und hältst nach. Arbeite mit
+Rollen statt Namen, schreib klar und knapp, ohne Einleitung.
+
+Wenn ich „Tagesordnung“ schreibe und das letzte Protokoll und meine neuen Punkte einfüge:
+- Tagesordnung als Tabelle: Nr. | Punkt | Frage, die am Ende beantwortet sein soll |
+  Verantwortlich | Minuten | Vorbereitung. Punkt 1 sind immer die offenen Aufgaben aus dem
+  letzten Protokoll. Die letzten 5 Minuten sind für die Zusammenfassung reserviert.
+- Für jeden Verantwortlichen einen Vorbereitungsauftrag in zwei Sätzen.
+- Sag mir, welcher Punkt per Mail erledigt werden kann und welche Aufgabe schon einmal
+  verschoben wurde.
+
+Wenn ich „Protokoll“ schreibe und ein Transkript, eine Tonaufnahme oder Stichpunkte gebe:
+- Kopf: Bezeichnung, Datum, Teilnehmer, abwesend, nächster Termin.
+- Tabelle Pos. | A/S/E | Was? | Wer? | Bis wann? (A = Aufgabe, S = Statement,
+  E = Entscheidung). Fehlt Wer oder Bis wann, schreib „offen“. Erfinde nichts.
+- Darunter „Was offen geblieben ist“: Aufgaben ohne Verantwortlichen oder Termin,
+  Widersprüche, Aufgaben an Abwesende, vertagte Punkte ohne Vorbereitung, wiederholt
+  verschobene Aufgaben.
+
+Wenn ich „Nachfassen“ schreibe:
+- Protokollmail an alle Teilnehmer, auch die Abwesenden, mit Bitte um fehlende Termine.
+- Liste der offenen Aufgaben für Punkt 1 der nächsten Sitzung.
+
+Widersprich mir, wenn ein Punkt kein Meeting braucht oder wenn ich die Runde zu groß
+oder zu lang plane.</pre>
+      </div>
+      <p class="mat-tipp"><strong>Danach im Alltag:</strong> Vor dem Jour fixe „Tagesordnung“ plus letztes Protokoll und neue Punkte. Danach „Protokoll“ plus Aufnahme oder Stichpunkte. Dann „Nachfassen“.</p>
+    </section>
+
+    <!-- Stufe 7 · Quellen -->
+    <section class="mat-section" id="quellen" data-stufe="7">
+      <h2><span class="mat-nr">7</span>Quellen</h2>
+      <ul class="quellen">
+        <li><strong>Steven Rogelberg:</strong> „The Surprising Science of Meetings“. Eine Tagesordnung allein verbessert ein Meeting nicht; kürzer planen; Moderation teilen.</li>
+        <li><strong>Patrick Lencioni:</strong> „Death by Meeting“. Vier Meetingtypen, die man nicht mischen soll.</li>
+        <li><strong>Leslie Perlow, Constance Noonan Hadley, Eunice Eun:</strong> „Stop the Meeting Madness“, Harvard Business Review 2017. Führungskräfte der oberen Ebene: fast 23 Stunden pro Woche in Meetings.</li>
+        <li><strong>Sharp Electronics:</strong> Befragung 2018 unter Büroangestellten in KMU, davon 1.001 in Deutschland. 16,5 Stunden pro Monat in Meetings.</li>
+        <li><strong>Shopify:</strong> Kalender-Bereinigung 2023, 322.000 Stunden weniger Meetings (NPR, Februar 2023).</li>
+        <li><strong>Amazon:</strong> Sitzungen beginnen mit stillem Lesen eines Memos statt mit Folien (Jeff Bezos, Aktionärsbrief 2018).</li>
+        <li><strong>Fredmund Malik:</strong> „Führen Leisten Leben“. Die Sitzung als Werkzeug: so wenige wie möglich, vorbereitet, mit Protokoll und Nachfassen.</li>
+        <li><strong>Leitfaden „Effiziente Meetings“</strong> von Thomas Brandenburger: Kostenrechnung, Musterprotokoll A/S/E.</li>
+      </ul>
+    </section>
+
+    <!-- Stufe 7 · Wie es weitergeht -->
+    <section class="mat-section" id="weiter" data-stufe="7">
+      <h2><span class="mat-nr">8</span>Wie es weitergeht</h2>
+      <ul>
+        <li><strong>Deine Hausaufgabe, freiwillig:</strong> Nimm deinen nächsten Jour fixe und lass dir aus dem letzten Protokoll die Tagesordnung machen. Danach Prompt 2, egal ob mit Aufnahme oder mit Stichpunkten.</li>
+        <li><strong>Workbook:</strong> Wer heute dabei ist, bekommt in den nächsten Tagen das Workbook mit allen Inhalten dieser Seite und den Antworten auf die Fragen aus der Runde.</li>
+        <li><strong>Nächster KI-Talk:</strong> Freitag, 11. Dezember 2026, 8:30 bis 9:30 Uhr · <strong>Was du 2027 nicht mehr tun solltest.</strong> Du bist für die Reihe angemeldet, die Einladung kommt automatisch.</li>
+        <li><strong>Weitersagen:</strong> Wenn du jemanden kennst, dem das helfen würde, zum Beispiel deine eigenen Führungskräfte: Schick ihnen den Link zur <a href="https://ki-talk.trust-unternehmer.de">KI-Talk-Seite</a>.</li>
+      </ul>
+      <div class="mat-tipp">
+        <p><strong>Und wenn du KI im ganzen Betrieb angehen willst:</strong> Was du hier für dich ausprobierst, kann dein ganzes Team, mit gemeinsamen Spielregeln, freigegebenen Werkzeugen und geklärtem Datenschutz. Dafür gibt es ein sechsmonatiges Projekt, das über INQA-Coaching zu 80 % gefördert wird. <a href="https://inqa.trust-unternehmer.de">Alles zum Projekt</a> · Fragen? Sprich mich einfach an.</p>
+      </div>
+      <p class="merksatz">Weniger Meetings, aber jedes mit Ergebnis. Die KI nimmt dir die Vorbereitung und das Protokoll ab.</p>
+    </section>
+
+  </main>
+</div>
+
+<div class="stufe-neu" id="stufe-neu" hidden>
+  <button type="button" id="stufe-neu-knopf">Neu freigegeben: <span id="stufe-neu-titel"></span> ↓</button>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Thomas Brandenburger</strong> · TB UnternehmerImpulse eG<br>
+      Am Zwingel 2 · 35683 Dillenburg
+    </div>
+    <div>
+      <a href="https://trust-unternehmer.de">trust-unternehmer.de</a> ·
+      <a href="https://trust-unternehmer.de/impressum">Impressum</a> ·
+      <a href="https://trust-unternehmer.de/datenschutz">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Kopier-Knöpfe. ES5, ohne Abhängigkeiten. Wie Oktober.
+   data-ziel    = id eines <pre>: kopiert dessen Text unverändert
+   data-tabelle = id einer <table>: kopiert tabulatorgetrennt für Excel */
+(function () {
+  function tabelleAlsText(tabelle) {
+    var zeilen = tabelle.querySelectorAll('tr');
+    var aus = [];
+    for (var i = 0; i < zeilen.length; i++) {
+      var zellen = zeilen[i].querySelectorAll('th, td');
+      var werte = [];
+      for (var j = 0; j < zellen.length; j++) {
+        werte.push(zellen[j].textContent.replace(/\s+/g, ' ').trim());
+      }
+      aus.push(werte.join('\t'));
+    }
+    return aus.join('\n');
+  }
+
+  function rueckfall(text) {
+    var feld = document.createElement('textarea');
+    feld.value = text;
+    feld.setAttribute('readonly', '');
+    feld.style.position = 'fixed';
+    feld.style.top = '-1000px';
+    document.body.appendChild(feld);
+    feld.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(feld);
+    return ok;
+  }
+
+  function melden(knopf, ok) {
+    var alt = knopf.getAttribute('data-text') || knopf.textContent;
+    knopf.setAttribute('data-text', alt);
+    knopf.textContent = ok ? 'Kopiert ✓' : 'Bitte markieren und kopieren';
+    if (ok) { knopf.className += ' ok'; }
+    window.setTimeout(function () {
+      knopf.textContent = alt;
+      knopf.className = knopf.className.replace(/\s?ok\b/g, '');
+    }, 2000);
+  }
+
+  function kopieren(knopf, text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () {
+        melden(knopf, true);
+      }, function () {
+        melden(knopf, rueckfall(text));
+      });
+    } else {
+      melden(knopf, rueckfall(text));
+    }
+  }
+
+  var knoepfe = document.querySelectorAll('.kopieren');
+  for (var k = 0; k < knoepfe.length; k++) {
+    knoepfe[k].addEventListener('click', function () {
+      var ziel = this.getAttribute('data-ziel');
+      var tab = this.getAttribute('data-tabelle');
+      var text = '';
+      if (ziel) { text = document.getElementById(ziel).textContent; }
+      if (tab) { text = tabelleAlsText(document.getElementById(tab)); }
+      kopieren(this, text);
+    });
+  }
+
+  /* Druck: Textfassungen neben Grafiken ausklappen, danach wie vorher */
+  var geoeffnet = [];
+  window.addEventListener('beforeprint', function () {
+    var felder = document.querySelectorAll('details.alstext');
+    geoeffnet = [];
+    for (var d = 0; d < felder.length; d++) {
+      if (!felder[d].open) { felder[d].open = true; geoeffnet.push(felder[d]); }
+    }
+  });
+  window.addEventListener('afterprint', function () {
+    for (var d = 0; d < geoeffnet.length; d++) { geoeffnet[d].open = false; }
+    geoeffnet = [];
+  });
+})();
+</script>
+
+<script>
+/* ============================================================
+   Schrittweise Freischaltung. ES5, ohne Abhängigkeiten.
+   Teilnehmer: fragt alle 5 Sekunden den Stufen-Worker und zeigt
+   alle Elemente mit data-stufe <= aktueller Stufe.
+   Moderator (?moderator): Steuerleiste, setzt die Stufe per POST.
+   Fällt der Worker beim ersten Laden aus, wird alles gezeigt.
+   ============================================================ */
+(function () {
+  var STUFEN_URL = 'https://ki-talk-stufe.thb-ad8.workers.dev/stufe?talk=2026-11';
+  var ABFRAGE_MS = 5000;
+  var MAX_STUFE = 7;
+  var wurzel = document.documentElement;
+  var suche = window.location.search;
+
+  if (/[?&]alles\b/.test(suche)) { return; }
+
+  var istModerator = /[?&]moderator\b/.test(suche);
+  var aktuell = -1;
+  var ersteAntwort = false;
+
+  function alleZeigen() {
+    wurzel.className = wurzel.className.replace(/\s?stufen-aktiv\b/g, '');
+  }
+
+  function anwenden(stufe, vonModerator) {
+    if (stufe === aktuell) { return; }
+    var vorher = aktuell;
+    aktuell = stufe;
+    var elemente = document.querySelectorAll('[data-stufe]');
+    var ersterNeuer = null;
+    for (var i = 0; i < elemente.length; i++) {
+      var s = parseInt(elemente[i].getAttribute('data-stufe'), 10);
+      var sichtbar = s <= stufe;
+      var war = elemente[i].className.indexOf('frei') !== -1;
+      if (sichtbar && !war) {
+        elemente[i].className += ' frei';
+        if (vorher >= 0 && elemente[i].tagName === 'SECTION') { ersterNeuer = elemente[i]; }
+      } else if (!sichtbar && war) {
+        elemente[i].className = elemente[i].className.replace(/\s?frei\b/g, '');
+      }
+    }
+    if (ersterNeuer) {
+      if (vonModerator) {
+        ersterNeuer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        hinweisZeigen(ersterNeuer);
+      }
+    }
+    leisteAktualisieren();
+  }
+
+  /* Hinweis für Teilnehmer, wenn ein neuer Abschnitt erscheint */
+  var hinweis = document.getElementById('stufe-neu');
+  var hinweisZiel = null;
+  var hinweisTimer = null;
+  function hinweisZeigen(abschnitt) {
+    var h2 = abschnitt.querySelector('h2');
+    var titel = h2 ? h2.textContent.replace(/^\s*\d+\s*/, '') : 'nächster Abschnitt';
+    document.getElementById('stufe-neu-titel').textContent = titel;
+    hinweisZiel = abschnitt;
+    hinweis.hidden = false;
+    if (hinweisTimer) { window.clearTimeout(hinweisTimer); }
+    hinweisTimer = window.setTimeout(function () { hinweis.hidden = true; }, 12000);
+  }
+  document.getElementById('stufe-neu-knopf').addEventListener('click', function () {
+    if (hinweisZiel) { hinweisZiel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    hinweis.hidden = true;
+  });
+
+  function abfragen() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', STUFEN_URL + '&t=' + new Date().getTime(), true);
+    xhr.timeout = 4000;
+    xhr.onload = function () {
+      if (xhr.status !== 200) { return; }
+      var daten;
+      try { daten = JSON.parse(xhr.responseText); } catch (e) { return; }
+      if (typeof daten.stufe !== 'number') { return; }
+      ersteAntwort = true;
+      if (!istModerator || aktuell < 0) { anwenden(daten.stufe, false); }
+    };
+    xhr.send();
+  }
+
+  /* Sicherheitsnetz: Ohne Antwort binnen 6 Sekunden alles zeigen */
+  window.setTimeout(function () {
+    if (!ersteAntwort) { alleZeigen(); }
+  }, 6000);
+
+  abfragen();
+  if (!istModerator) { window.setInterval(abfragen, ABFRAGE_MS); }
+
+  /* ---------- Moderator-Leiste ---------- */
+  var leiste = null;
+  function leisteAktualisieren() {
+    if (!leiste) { return; }
+    var anzeige = aktuell > MAX_STUFE ? 'alles' : (aktuell < 0 ? '–' : aktuell + ' von ' + MAX_STUFE);
+    leiste.querySelector('.ml-stand').textContent = 'Stufe ' + anzeige;
+  }
+
+  function schluessel() {
+    try { return window.localStorage.getItem('kiTalkModerator') || ''; } catch (e) { return ''; }
+  }
+
+  function setzen(stufe) {
+    var key = schluessel();
+    var meldung = leiste.querySelector('.ml-meldung');
+    if (!key) { meldung.textContent = 'Erst Schlüssel eintragen'; return; }
+    stufe = Math.max(0, Math.min(99, stufe));
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', STUFEN_URL, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Authorization', 'Bearer ' + key);
+    xhr.timeout = 6000;
+    meldung.textContent = 'sende …';
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        meldung.textContent = 'freigegeben';
+        anwenden(stufe, true);
+      } else if (xhr.status === 401) {
+        meldung.textContent = 'Schlüssel falsch';
+      } else {
+        meldung.textContent = 'Fehler ' + xhr.status;
+      }
+    };
+    xhr.onerror = xhr.ontimeout = function () { meldung.textContent = 'keine Verbindung'; };
+    xhr.send(JSON.stringify({ stufe: stufe }));
+  }
+
+  if (istModerator) {
+    leiste = document.createElement('div');
+    leiste.className = 'mod-leiste';
+    leiste.innerHTML =
+      '<span class="ml-stand">Stufe –</span>' +
+      '<button type="button" class="ml-zurueck" title="Eine Stufe zurück">‹</button>' +
+      '<button type="button" class="ml-weiter">Nächster Abschnitt ›</button>' +
+      '<button type="button" class="ml-alles" title="Alles freigeben">Alles</button>' +
+      '<span class="ml-meldung"></span>' +
+      '<span class="ml-key"' + (schluessel() ? ' hidden' : '') + '><input type="password" placeholder="Schlüssel" aria-label="Moderator-Schlüssel"><button type="button">OK</button></span>';
+    document.body.appendChild(leiste);
+    leiste.querySelector('.ml-weiter').addEventListener('click', function () { setzen((aktuell < 0 ? 0 : aktuell) + 1); });
+    leiste.querySelector('.ml-zurueck').addEventListener('click', function () { setzen((aktuell > MAX_STUFE ? MAX_STUFE : aktuell) - 1); });
+    leiste.querySelector('.ml-alles').addEventListener('click', function () { setzen(99); });
+    leiste.querySelector('.ml-key button').addEventListener('click', function () {
+      var wert = leiste.querySelector('.ml-key input').value.trim();
+      try { window.localStorage.setItem('kiTalkModerator', wert); } catch (e) {}
+      leiste.querySelector('.ml-key').hidden = true;
+      leiste.querySelector('.ml-meldung').textContent = 'Schlüssel gespeichert';
+    });
+    leisteAktualisieren();
+  }
+})();
+</script>
+
+</body>
+</html>
