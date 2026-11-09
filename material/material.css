@@ -487,3 +487,81 @@ details.alstext summary {
   .stufen-aktiv [data-stufe]:not(.frei) { display: block !important; }
   .stufe-neu, .mod-leiste { display: none !important; }
 }
+
+/* ---------- Präsentationsmodus und Sprechnotizen (ab November 2026) ----------
+   <html class="praesentation"> während des Talks (bis Stufe 98):
+   Lesetext verborgen, Stichworte sichtbar, Prompts zugeklappt.
+   <html class="moderator"> nur mit ?moderator: Sprechnotizen sichtbar. */
+
+.kurz, .notiz, .ansehen { display: none; }
+.praesentation .kurz { display: block; }
+.praesentation .lesetext { display: none !important; }
+.praesentation .ansehen { display: inline-block; }
+.praesentation .prompt pre { display: none; }
+.praesentation .prompt.offen pre { display: block; }
+.moderator .notiz { display: block; }
+
+.mat-section .stichworte {
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0;
+}
+.mat-section .stichworte li {
+  position: relative;
+  margin: 0 0 0.6rem;
+  padding-left: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-navy);
+}
+.mat-section .stichworte li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--color-orange);
+}
+
+.prompt-knoepfe { display: inline-flex; gap: 0.5rem; flex-wrap: wrap; }
+.ansehen {
+  min-height: 40px;
+  padding: 0.45rem 1.1rem;
+  border: 2px solid var(--color-white);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.ansehen:hover { background: rgba(255, 255, 255, 0.12); }
+
+.notiz {
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1.15rem 0.6rem;
+  border: 2px dashed #e0b400;
+  border-radius: var(--radius-sm);
+  background: #fffbe6;
+}
+.notiz-kopf {
+  display: block;
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a6d00;
+}
+.mat-section .notiz ul { margin: 0; padding-left: 1.1rem; }
+.mat-section .notiz li { font-size: 1.05rem; margin: 0 0 0.4rem; }
+
+@media print {
+  .kurz, .notiz, .ansehen { display: none !important; }
+  .praesentation .lesetext { display: block !important; }
+  .praesentation .prompt pre { display: block !important; }
+}
