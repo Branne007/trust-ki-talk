@@ -296,7 +296,8 @@ Meine neuen Punkte (Beispiel – ersetze sie durch deine eigenen, gern per Sprac
           <li>Ergebnis zeigen, dann <strong>„Was offen geblieben ist“</strong>. Zwei, drei Teilnehmer berichten lassen.</li>
           <li>Das sollte die KI finden: KW 48 oder 49 · niemand ruft den Kunden an · Einkauf fehlt, hat zwei Aufgaben · Wartungsvertrag zum zweiten Mal verschoben · Messe ohne Vorbereitung · keine Zusammenfassung.</li>
           <li>Ehrlich zeigen, wo die KI danebenliegt. Darum: prüfen, bevor es rausgeht.</li>
-          <li><strong>Nachfassen:</strong> Protokoll am selben Tag raus, Rückmeldung ist Bringschuld. Prompt 3 im selben Chat zeigen (bei Zeitnot nur zeigen).</li>
+          <li><strong>Nachfassen:</strong> Das Ergebnis von Prompt 2 ist ein Entwurf für mich. „Nur für dich“ geht nicht raus. Erst kläre ich die offenen Punkte und vergebe die Aufgaben, dann Prompt 3 im selben Chat: fertige Protokollmail, nachträglich Vergebenes markiert, offene Aufgaben für die nächste Tagesordnung.</li>
+          <li>Protokoll am selben Tag raus, Rückmeldung ist Bringschuld. Bei Zeitnot Prompt 3 nur zeigen.</li>
           <li>Zurück zur Grafik: Die offenen Punkte sind Punkt 1 der nächsten Runde. Der Kreis schließt sich.</li>
           <li><strong>Brücke Oktober:</strong> eigene Aufgaben in die Delegationsliste. Wartungsvertrag: „Wer zweimal vertröstet, bekommt keinen dritten Termin, sondern ein Gespräch.“</li>
         </ul>
@@ -320,7 +321,8 @@ Nächster Termin: <mark class="beispiel">Montag, 16. November 2026</mark>.
 
 Erstelle das Protokoll, genau so:
 
-1. Kopf: Bezeichnung, Datum, Teilnehmer, abwesend, nächster Termin.
+1. Kopf als kurze Liste, jede Angabe in einer eigenen Zeile: Meeting · Datum · Teilnehmer ·
+   abwesend · nächster Termin
 2. Eine Tabelle mit den Spalten: Pos. | A/S/E | Was? | Wer? | Bis wann?
    A = Aufgabe, S = Statement (wichtige Information), E = Entscheidung.
    - Jede Aufgabe bekommt eine Rolle und ein Datum. Fehlt eines davon im Gespräch,
@@ -328,7 +330,8 @@ Erstelle das Protokoll, genau so:
    - Rechne Angaben wie „Mittwoch“ oder „diese Woche“ in ein Datum um.
    - Lass Organisatorisches zur Sitzung, Abschweifungen und Smalltalk weg.
    - Höchstens eine Zeile je Position.
-3. Darunter „Was offen geblieben ist“, als kurze Liste:
+Danach, deutlich getrennt unter der Überschrift „Nur für dich“:
+3. „Was offen geblieben ist“, als kurze Liste:
    - Aufgaben ohne Verantwortlichen oder ohne Termin
    - Widersprüche, die nicht aufgelöst wurden
    - Aufgaben an Personen, die nicht dabei waren
@@ -380,12 +383,13 @@ Transkript (Beispiel – ersetze es durch dein eigenes):
 
       <h3>Nachfassen</h3>
       <ul class="stichworte kurz">
-        <li>Protokoll am selben Tag raus</li>
+        <li>Offene Punkte klären, dann Protokoll am selben Tag raus</li>
         <li>Rückmeldung ist Bringschuld</li>
         <li>Offene Punkte = Punkt 1 der nächsten Runde</li>
       </ul>
       <div class="lesetext">
         <ul>
+          <li><strong>Erst klären, dann verschicken.</strong> Das Ergebnis von Prompt 2 ist ein Entwurf für dich. Was offen geblieben ist, klärst du nach der Sitzung und vergibst die Aufgaben. Prompt 3 macht daraus die fertige Protokollmail.</li>
           <li><strong>Das Protokoll geht am selben Tag raus,</strong> an alle, auch an die, die gefehlt haben.</li>
           <li><strong>Rückmeldung ist Bringschuld.</strong> Wer eine Aufgabe hat, meldet sich, wenn sie erledigt ist oder sich verschiebt. Das vereinbarst du einmal mit allen.</li>
           <li><strong>Die offenen Punkte sind Punkt 1 der nächsten Runde.</strong> Damit schließt sich der Kreis zu Prompt 1.</li>
@@ -393,15 +397,25 @@ Transkript (Beispiel – ersetze es durch dein eigenes):
         <p>Aufgaben aus dem Jour fixe, die du selbst vergeben hast, gehören außerdem in deine Delegationsliste aus dem Oktober. Der <a href="../2026-10/#montags-check">Montags-Check</a> hält sie nach.</p>
       </div>
       <div class="prompt">
-        <div class="prompt-kopf"><strong>Prompt 3 · Protokollmail und offene Punkte</strong><span class="prompt-knoepfe"><button type="button" class="ansehen" aria-expanded="false">Ansehen</button><button type="button" class="kopieren" data-ziel="p-nachfassen">Kopieren</button></span></div>
-<pre id="p-nachfassen">Mach daraus zwei Dinge:
+        <div class="prompt-kopf"><strong>Prompt 3 · Klären und als Mail verschicken</strong><span class="prompt-knoepfe"><button type="button" class="ansehen" aria-expanded="false">Ansehen</button><button type="button" class="kopieren" data-ziel="p-nachfassen">Kopieren</button></span></div>
+<pre id="p-nachfassen">Ich habe die offenen Punkte nach der Sitzung geklärt:
+<mark class="beispiel">- Kunden vorwarnen: Vertrieb, bis Mittwoch, 11.11.</mark>
+<mark class="beispiel">- Angebot Wartungsvertrag Kompressor: Produktion holt es ein, bis Freitag, 13.11.</mark>
+<mark class="beispiel">- Preiserhöhung Verpackung: Einkauf prüft mit dem Angebot aus Wetzlar, Vorschlag bis Mittwoch, 18.11.</mark>
+<mark class="beispiel">- Liefertermin: Ziel bleibt KW 48, über die zweite Samstagsschicht entscheidet der Geschäftsführer nach dem Kapazitätsplan</mark>
 
-1. Eine E-Mail an alle Teilnehmer, auch an die, die gefehlt haben. Betreff, höchstens
-   drei Sätze, dann das Protokoll als Tabelle. Bitte darum, dass jeder, der eine Aufgabe
-   ohne Termin hat, bis <mark class="beispiel">Mittwoch, 11. November</mark> einen Termin nennt, und dass offene Punkte
-   ohne Verantwortlichen bis dahin vergeben werden. Du-Form, freundlich, ohne Floskeln.
-2. Die Liste der offenen Aufgaben als Tabelle: Aufgabe | Wer | Bis wann | Stand.
-   Sie wird Punkt 1 der Tagesordnung am <mark class="beispiel">16. November</mark>.</pre>
+Mach daraus die Protokollmail an alle Teilnehmer, auch an die, die gefehlt haben:
+1. Betreff
+2. Zwei Sätze Einleitung, Du-Form, ohne Floskeln
+3. Der Kopf als kurze Liste: Meeting · Datum · Teilnehmer · abwesend · nächster Termin
+4. Das Protokoll als Tabelle: Pos. | A/S/E | Was? | Wer? | Bis wann?
+   Trag meine Klärungen ein und markiere sie mit „(nach der Sitzung vergeben)“.
+   Schreib neutral, nicht in Ich-Form. Lass die Hinweise „Nur für dich“ weg.
+5. Ein Satz: Wer eine Aufgabe nicht schafft, meldet sich vor dem Termin.
+6. Ein kurzer Schluss.
+
+Danach, deutlich getrennt unter der Überschrift „Für die nächste Tagesordnung“: die offenen
+Aufgaben als Tabelle Aufgabe | Wer | Bis wann. Sie werden Punkt 1 am <mark class="beispiel">16. November</mark>.</pre>
       </div>
       <p class="mat-tipp"><strong>Wichtig:</strong> Prompt 3 schickst du im <strong>selben Chat</strong> ab wie Prompt 2, denn er baut auf dem Protokoll auf.</p>
       <p class="merksatz">Ein Meeting ist erst vorbei, wenn klar ist, wer was bis wann macht.</p>
@@ -446,13 +460,14 @@ Wenn ich „Protokoll“ schreibe und ein Transkript, eine Tonaufnahme oder Stic
 - Kopf: Bezeichnung, Datum, Teilnehmer, abwesend, nächster Termin.
 - Tabelle Pos. | A/S/E | Was? | Wer? | Bis wann? (A = Aufgabe, S = Statement,
   E = Entscheidung). Fehlt Wer oder Bis wann, schreib „offen“. Erfinde nichts.
-- Darunter „Was offen geblieben ist“: Aufgaben ohne Verantwortlichen oder Termin,
-  Widersprüche, Aufgaben an Abwesende, vertagte Punkte ohne Vorbereitung, wiederholt
-  verschobene Aufgaben.
+- Darunter getrennt „Nur für dich“: was offen geblieben ist (Aufgaben ohne Verantwortlichen
+  oder Termin, Widersprüche, Aufgaben an Abwesende, vertagte Punkte ohne Vorbereitung,
+  wiederholt verschobene Aufgaben).
 
-Wenn ich „Nachfassen“ schreibe:
-- Protokollmail an alle Teilnehmer, auch die Abwesenden, mit Bitte um fehlende Termine.
-- Liste der offenen Aufgaben für Punkt 1 der nächsten Sitzung.
+Wenn ich „Nachfassen“ schreibe und meine Klärungen der offenen Punkte nenne:
+- Trag sie ins Protokoll ein, markiert mit „(nach der Sitzung vergeben)“, und schreib die
+  Protokollmail an alle Teilnehmer, auch die Abwesenden. Neutral, ohne „Nur für dich“.
+- Darunter getrennt die offenen Aufgaben für Punkt 1 der nächsten Sitzung.
 
 Widersprich mir, wenn ein Punkt kein Meeting braucht oder wenn ich die Runde zu groß
 oder zu lang plane.</pre>
