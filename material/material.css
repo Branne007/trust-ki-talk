@@ -565,3 +565,112 @@ details.alstext summary {
   .praesentation .lesetext { display: block !important; }
   .praesentation .prompt pre { display: block !important; }
 }
+
+/* ---------- Strategietag (ab 18.11.2026) ----------
+   Zeit-Plakette, Frist im Kopf, Checkliste und Erledigt-Kästchen,
+   großer Knopf, Navy-Kasten, Gruppen im Inhaltsverzeichnis.
+   Erstmals genutzt von material/2026-11-strategietag/. */
+
+.mat-hero .mat-frist {
+  margin: 0 0 1.25rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.mat-section .zeit {
+  display: inline-block;
+  margin: -0.35rem 0 1rem;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.mat-toc .mat-toc-gruppe {
+  margin: 0.2rem 0 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+.mat-toc .mat-toc-gruppe ~ .mat-toc-gruppe { margin-top: 0.8rem; }
+.mat-toc a.fertig::after {
+  content: "✓";
+  margin-left: auto;
+  padding-left: 0.4rem;
+  font-weight: 700;
+  color: var(--color-orange-dark);
+}
+
+.checkliste { list-style: none; margin: 1rem 0 0; padding: 0; }
+.mat-section .checkliste li { margin: 0 0 0.65rem; }
+.checkliste label,
+.erledigt label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+.checkliste input,
+.erledigt input {
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--color-navy);
+  cursor: pointer;
+}
+.mat-section .erledigt {
+  display: inline-block;
+  margin: 1.75rem 0 0;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: var(--color-bg);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+.erledigt input { margin-top: 0.05rem; }
+
+.mat-knopf {
+  display: inline-block;
+  margin: 1.25rem 0 0;
+  padding: 0.9rem 1.9rem;
+  border-radius: 999px;
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.mat-knopf:hover,
+.mat-knopf:focus { background: var(--color-orange-dark); color: var(--color-white); }
+
+.mat-kasten-navy {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+.mat-section .mat-kasten-navy p { margin: 0; color: var(--color-white); }
+.mat-kasten-navy a { color: var(--color-white); }
+
+.mat-ablauf + .mat-hinweis { margin-top: 1rem; }
+.mat-tabelle + .mat-ablauf { margin-top: 1.5rem; }
+.mat-marke { flex: 1 0 100%; font-size: 0.95rem; }
+
+@media print {
+  .mat-hero .mat-frist { color: var(--color-navy); }
+  .mat-knopf { padding: 0; background: none; color: var(--color-navy); font-size: 1.15rem; }
+  .zeit { border: 1px solid var(--color-navy); }
+  .mat-kasten-navy { background: none; color: var(--color-text); border: 2px solid var(--color-navy); }
+  .mat-section .mat-kasten-navy p, .mat-kasten-navy a { color: var(--color-text); }
+  .mat-ablauf, .mat-hinweis, .mat-tipp, .mat-kasten-navy, .checkliste li { break-inside: avoid; }
+}
